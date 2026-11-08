@@ -36,12 +36,24 @@
 ## Os 5 passos da busca
 
 - Faça os 5 passos abaixo em ordem em toda busca e nunca pule um deles.
+- Use o método do Maps primeiro: priorize quem no Google Maps não tem botão de site e tem botão de WhatsApp. Leia o método completo em [método do Maps](#método-do-maps-sem-site-e-com-botão-de-whatsapp) antes de começar.
 - Busque o nicho na cidade INTEIRA no Maps e no Google, com várias buscas diferentes, e junte os resultados de todas as fontes.
 - Descarte quem já tem site próprio e fique só com quem não tem site próprio.
 - Fique só com quem tem celular ou WhatsApp e descarte quem só tem telefone fixo sem celular publicado.
 - Marque como WhatsApp confirmado só quando a própria empresa publica o número como WhatsApp.
 - Avise quando o número está em formato antigo ou incompleto e peça para testar antes de mandar mensagem.
 - Entregue endereço, telefone, link do WhatsApp e o motivo de ser um bom lead para cada lead da lista.
+
+## Método do Maps: sem site e com botão de WhatsApp
+
+- Antes de abrir qualquer outro site, filtre no Google Maps: abra a ficha de cada empresa do nicho na cidade e olhe os botões de contato da ficha.
+- Prioridade máxima: ficha **sem botão de site e com botão de WhatsApp**. É o lead ideal: a empresa não tem site próprio e já usa WhatsApp para atender.
+- O botão de WhatsApp na ficha do Google Maps é publicado pela própria empresa no perfil dela (Google Business Profile). Por isso ele conta como prova publicada pela empresa: marque **WhatsApp confirmado** e escreva na Fonte "Google Maps — botão de WhatsApp no perfil da empresa".
+- Se a ficha tem botão de site, abra o link e confira o domínio: domínio da empresa é site próprio e o lead é descartado. Instagram, Facebook, Linktree e página de pedido de terceiros (iFood, Anota.ai e parecidos) não são site próprio.
+- Se a ficha não tem botão de WhatsApp mas publica um celular, o lead entra como **WhatsApp provável** e a confirmação segue a regra normal, com prova publicada pela empresa no Instagram, no perfil do Google ou em outro lugar.
+- Se a ficha só tem telefone fixo e nenhum celular, descarte o lead.
+- Use `places details` com o place_id para confirmar endereço, telefone e os botões de contato de quem não tem site listado.
+- Mesmo com o filtro do Maps, faça no mínimo 4 buscas diferentes na cidade INTEIRA e junte os resultados, porque nem toda ficha mostra os botões certos na busca.
 
 ## Busca na cidade INTEIRA
 
@@ -90,7 +102,7 @@
 - Entregue o resultado sempre em planilha e nunca entregue só a lista no chat.
 - Leia as colunas, o nome do arquivo e a entrega em [planilha](references/planilha.md).
 - Crie a planilha com `artifact.create_file` com kind spreadsheet e entregue o arquivo na mesma mensagem que diz que está pronta.
-- Coloque na planilha nome, nicho, cidade e estado, endereço, telefone, link do WhatsApp, site próprio, WhatsApp confirmado, motivo de ser bom lead, fonte e data da busca.
+- Coloque na planilha nome, nicho, cidade e estado, endereço, telefone, link do WhatsApp, site próprio, WhatsApp confirmado, motivo de ser bom lead, fonte, data da busca e Já falei?, nesta ordem, lendo as colunas em [planilha](references/planilha.md).
 - Ordene a planilha com WhatsApp confirmado primeiro, depois WhatsApp provável e por último os números para testar.
 - Escreva no chat um resumo curto com o melhor lead e quantos leads confirmados e prováveis a planilha tem.
 - Guarde a planilha em `~/workspace/your_files/prospeccao-leads/` com o nome do nicho e da cidade.
@@ -112,9 +124,17 @@
 - Avise o custo: mensagem de marketing para o Brasil custa cerca de R$ 0,3217 por mensagem entregue, então 20 por dia custam cerca de R$ 6,43 por dia em tarifa da Meta.
 - Avise o risco: prospecção fria, para quem nunca pediu contato, pode gerar denúncia e queda na qualidade da conta, mesmo na API oficial. Comece pelos leads com WhatsApp confirmado e volume baixo.
 
+## Coluna Já falei? — como marcar quem você já abordou
+
+- Toda planilha tem a coluna **Já falei?** como última coluna, com Não em todos os leads novos.
+- Para marcar que você já falou com uma loja, abra a planilha, ache a linha da empresa e troque o Não por **Sim** na coluna Já falei?. É só isso, não precisa apagar a linha nem mudar mais nada.
+- Você também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca o Sim na planilha para você.
+- Antes de qualquer busca nova (`/prospectar` ou `/mais`) do mesmo nicho e da mesma cidade, o agente lê a planilha que já existe para esse nicho e essa cidade e **nunca traz de volta um lead marcado com Sim** em Já falei?. O lead continua na planilha antiga para você consultar, mas some das buscas novas.
+- Quem está marcado com Não continua aparecendo nas buscas novas normalmente, até você marcar Sim.
+
 ## Buscar mais, descartados e resumo
 
-- Quando o usuário digitar `/mais`, busque mais leads do mesmo nicho na mesma cidade, com buscas novas que ainda não foram feitas, sem repetir nenhum lead já encontrado, e acrescente os novos na planilha.
+- Quando o usuário digitar `/mais`, leia primeiro a planilha que já existe para esse nicho e essa cidade, anote quem está marcado com Sim em Já falei? e nunca traga esses leads de volta. Depois busque mais leads do mesmo nicho na mesma cidade, com buscas novas que ainda não foram feitas, sem repetir nenhum lead já encontrado, e acrescente os novos na planilha.
 - Quando o usuário digitar `/descartados`, mostre no chat quem foi descartado na busca atual, com o motivo de cada descarte, como site próprio, só telefone fixo ou fechado.
 - Quando o usuário digitar `/resumo`, mostre no chat quantos leads a busca atual tem, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos foram descartados e qual é o melhor lead, com o telefone dele.
 
