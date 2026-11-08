@@ -19,7 +19,7 @@ Crie a planilha com as colunas abaixo, nesta ordem, sem trocar a ordem e sem tir
 
 ## Coluna Já falei?
 
-Escreva Não em todos os leads novos. Quando o usuário já falou com a empresa, ele troca o Não por Sim na linha dela, direto na planilha. O lead marcado com Sim continua na planilha para consulta, mas nunca volta em busca nova do mesmo nicho e da mesma cidade: antes de cada `/prospectar` ou `/mais`, leia a planilha que já existe para esse nicho e essa cidade e exclua quem está marcado com Sim. O usuário também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca o Sim para ele.
+Escreva Não em todos os leads novos. Quando o usuário já falou com a empresa, ele marca a caixinha na linha dela, direto na planilha. A coluna é uma caixinha de seleção (checkbox): quadrado vazio quando ainda não falou, marcado quando já falou. O lead marcado continua na planilha para consulta, mas nunca volta em busca nova do mesmo nicho e da mesma cidade: antes de cada `/prospectar` ou `/mais`, leia a planilha que já existe para esse nicho e essa cidade e exclua quem está com a caixinha marcada. O usuário também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca a caixinha para ele.
 
 ## Preenchimento
 
@@ -42,8 +42,8 @@ Deixe a planilha bonita e fácil de ler, sempre com o mesmo visual abaixo.
 - Coluna WhatsApp confirmado com cor: Sim em verde, Provável em amarelo e Testar número em vermelho.
 - Link do WhatsApp clicável, no formato https://wa.me/55 mais DDD mais número.
 - Largura das colunas ajustada ao conteúdo, sem texto cortado: nome e endereço mais largos, telefone e WhatsApp confirmado mais estreitos.
-- Coluna Já falei? com Sim ou Não: Não em todos os leads novos, e o usuário troca por Sim quando já falou com a empresa.
-- Segunda aba chamada Resumo, com o total de leads, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos já abordados (Sim em Já falei?), quantos descartados e o nome do melhor lead.
+- Coluna Já falei? com caixinha de seleção (checkbox): vazia em todos os leads novos, e o usuário marca com um clique quando já falou com a empresa.
+- Segunda aba chamada Resumo, com o total de leads, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos já abordados (caixinha marcada em Já falei?), quantos descartados e o nome do melhor lead.
 - Terceira aba chamada Como foi feita a busca, com os 5 passos aplicados, as buscas feitas e a lista de descartados com o motivo de cada um.
 
 ## Nome do arquivo

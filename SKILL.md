@@ -126,15 +126,15 @@
 
 ## Coluna Já falei? — como marcar quem você já abordou
 
-- Toda planilha tem a coluna **Já falei?** como última coluna, com Não em todos os leads novos.
-- Para marcar que você já falou com uma loja, abra a planilha, ache a linha da empresa e troque o Não por **Sim** na coluna Já falei?. É só isso, não precisa apagar a linha nem mudar mais nada.
-- Você também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca o Sim na planilha para você.
-- Antes de qualquer busca nova (`/prospectar` ou `/mais`) do mesmo nicho e da mesma cidade, o agente lê a planilha que já existe para esse nicho e essa cidade e **nunca traz de volta um lead marcado com Sim** em Já falei?. O lead continua na planilha antiga para você consultar, mas some das buscas novas.
-- Quem está marcado com Não continua aparecendo nas buscas novas normalmente, até você marcar Sim.
+- Toda planilha tem a coluna **Já falei?** como última coluna, com a caixinha vazia em todos os leads novos.
+- Para marcar que você já falou com uma loja, abra a planilha, ache a linha da empresa e **clique na caixinha** da coluna Já falei?. É só um clique, não precisa digitar nada.
+- Você também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca a caixinha na planilha para você.
+- Antes de qualquer busca nova (`/prospectar` ou `/mais`) do mesmo nicho e da mesma cidade, o agente lê a planilha que já existe para esse nicho e essa cidade e **nunca traz de volta um lead com a caixinha marcada** em Já falei?. O lead continua na planilha antiga para você consultar, mas some das buscas novas.
+- Quem está com a caixinha vazia continua aparecendo nas buscas novas normalmente, até você marcar.
 
 ## Buscar mais, descartados e resumo
 
-- Quando o usuário digitar `/mais`, leia primeiro a planilha que já existe para esse nicho e essa cidade, anote quem está marcado com Sim em Já falei? e nunca traga esses leads de volta. Depois busque mais leads do mesmo nicho na mesma cidade, com buscas novas que ainda não foram feitas, sem repetir nenhum lead já encontrado, e acrescente os novos na planilha.
+- Quando o usuário digitar `/mais`, leia primeiro a planilha que já existe para esse nicho e essa cidade, anote quem está com a caixinha marcada em Já falei? e nunca traga esses leads de volta. Depois busque mais leads do mesmo nicho na mesma cidade, com buscas novas que ainda não foram feitas, sem repetir nenhum lead já encontrado, e acrescente os novos na planilha.
 - Quando o usuário digitar `/descartados`, mostre no chat quem foi descartado na busca atual, com o motivo de cada descarte, como site próprio, só telefone fixo ou fechado.
 - Quando o usuário digitar `/resumo`, mostre no chat quantos leads a busca atual tem, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos foram descartados e qual é o melhor lead, com o telefone dele.
 
