@@ -1,5 +1,5 @@
 name: "prospeccao_leads"
 title: "Prospecção de Leads"
-description: "/help mostra todos os comandos. Todos os comandos só funcionam com / na frente. Comandos /prospectar, /nichos, /leads, /planilha, /mensagem, /mais, /descartados, /resumo e /help. Encontra empresas sem site próprio na cidade inteira, com celular e WhatsApp, e entrega os leads em planilha formatada para quem vende sites."
+description: "/help mostra todos os comandos. Todos os comandos só funcionam com / na frente. Comandos /prospectar, /nichos, /leads, /planilha, /mensagem, /mais, /descartados, /resumo, /automatizar e /help. Encontra empresas sem site próprio na cidade inteira, com celular e WhatsApp, e entrega os leads em planilha formatada para quem vende sites."
 category: "Work and knowledge"
 include_in_prompt: true

@@ -14,6 +14,7 @@ Todos os comandos só funcionam com `/` na frente.
 - `/mais` — busca mais leads do mesmo nicho na mesma cidade, sem repetir os já encontrados
 - `/descartados` — mostra quem foi descartado e o motivo de cada descarte
 - `/resumo` — mostra o resumo da busca atual: quantos leads, quantos confirmados, quantos prováveis e qual é o melhor lead
+- `/automatizar` — prospecta vários nichos e cidades e monta a fila de envio pela API oficial do WhatsApp Business
 - `/help` — mostra todos os comandos
 
 ## Como funciona
@@ -40,3 +41,8 @@ A planilha tem as colunas: Nome da empresa, Nicho, Cidade e estado, Endereço, T
 - `references/verificacao-whatsapp.md` — as regras de WhatsApp confirmado e provável
 - `references/planilha.md` — as regras da planilha
 - `references/mensagem.md` — o modelo da mensagem de abordagem
+- `references/automatizar.md` — as regras da automação pela API oficial do WhatsApp Business
+
+## Automação
+
+O comando `/automatizar` prospecta vários nichos e cidades e monta a fila de envio, com data e hora, telefone, modelo e custo. Ele só funciona pela API oficial do WhatsApp Business (Cloud API da Meta). Ele não envia pela conta pessoal e não usa programa não oficial. Para ligar, precisa de empresa verificada na Meta, número exclusivo, app e conta WhatsApp Business, token guardado com segurança, webhook, template aprovado e cartão em BRL. Mensagem de marketing para o Brasil custa cerca de R$ 0,3217 por mensagem entregue.

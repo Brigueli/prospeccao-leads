@@ -3,7 +3,7 @@
 ## A regra da barra
 
 - Use / na frente para chamar a skill e qualquer comando.
-- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem`, `/mais`, `/descartados`, `/resumo` e `/help`.
+- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem`, `/mais`, `/descartados`, `/resumo`, `/automatizar` e `/help`.
 - Os comandos que não funcionam são `$prospectar`, `prospectar` sem / e `quero prospectar` sem /.
 - Trate qualquer mensagem sem / como mensagem normal e a skill não ativa sem o comando.
 
@@ -18,6 +18,7 @@
 - Use `/mais` para buscar mais leads do mesmo nicho na mesma cidade, sem repetir os leads já encontrados.
 - Use `/descartados` para ver quem foi descartado na busca atual e o motivo do descarte de cada um.
 - Use `/resumo` para ver um resumo curto da busca atual: quantos leads, quantos confirmados, quantos prováveis, quantos para testar e qual é o melhor lead.
+- Use `/automatizar` para prospectar leads de vários nichos e cidades e montar a fila de envio pela API oficial do WhatsApp Business. Leia as regras completas em [automatizar](references/automatizar.md) antes de começar.
 - Use `/help` para ver a lista de todos os comandos com uma explicação curta de cada um.
 - Mostre a lista completa de comandos quando o usuário digitar `/help`, a qualquer momento, sem apagar o que já foi feito.
 
@@ -100,6 +101,16 @@
 - Leia o modelo em [mensagem](references/mensagem.md) e adapte com o nome da empresa, o nicho e o que ela não tem hoje.
 - Faça a mensagem curta, direta e em português, com o nome da empresa e a oferta de site.
 - Nunca mande a mensagem para a empresa sozinho e entregue o texto para o usuário copiar.
+
+## Automação pela API oficial
+
+- O `/automatizar` só funciona pela API oficial do WhatsApp Business, a Cloud API da Meta. Nunca use programa não oficial e nunca envie pela conta pessoal do usuário.
+- Antes de começar, leia [automatizar](references/automatizar.md) e faça a entrevista de lá: nichos, cidades, quantos envios por dia, intervalo e horário de início e fim.
+- Padrão seguro para começar: no máximo 20 envios por dia, 1 a cada 30 minutos, só em horário comercial, com no mínimo 3 modelos de mensagem diferentes.
+- Prospecte os leads com os 5 passos normais, tire os repetidos e monte a fila de envio em planilha, com data e hora, telefone, modelo usado, mensagem final, status e custo estimado.
+- Avise o usuário do que falta para ligar a API: empresa verificada na Meta, número exclusivo, app e conta WhatsApp Business, token guardado com segurança, webhook, template aprovado e cartão em BRL. Sem isso, entregue só a fila pronta, e não prometa envio automático.
+- Avise o custo: mensagem de marketing para o Brasil custa cerca de R$ 0,3217 por mensagem entregue, então 20 por dia custam cerca de R$ 6,43 por dia em tarifa da Meta.
+- Avise o risco: prospecção fria, para quem nunca pediu contato, pode gerar denúncia e queda na qualidade da conta, mesmo na API oficial. Comece pelos leads com WhatsApp confirmado e volume baixo.
 
 ## Buscar mais, descartados e resumo
 
