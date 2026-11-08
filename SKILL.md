@@ -3,7 +3,7 @@
 ## A regra da barra
 
 - Use / na frente para chamar a skill e qualquer comando.
-- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem`, `/mais`, `/descartados`, `/resumo`, `/automatizar` e `/help`.
+- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem`, `/mais`, `/descartados`, `/resumo`, `/automatizar`, `/verificar`, `/bairros`, `/prioridade` e `/help`.
 - Os comandos que não funcionam são `$prospectar`, `prospectar` sem / e `quero prospectar` sem /.
 - Trate qualquer mensagem sem / como mensagem normal e a skill não ativa sem o comando.
 
@@ -19,6 +19,9 @@
 - Use `/descartados` para ver quem foi descartado na busca atual e o motivo do descarte de cada um.
 - Use `/resumo` para ver um resumo curto da busca atual: quantos leads, quantos confirmados, quantos prováveis, quantos para testar e qual é o melhor lead.
 - Use `/automatizar` para prospectar leads de vários nichos e cidades e montar a fila de envio pela API oficial do WhatsApp Business. Leia as regras completas em [automatizar](references/automatizar.md) antes de começar.
+- Use `/verificar` para rechecar um lead (ou todos os leads da planilha atual) antes de abordar: site próprio e site da rede, WhatsApp e se o lugar ainda está aberto. Leia as regras completas em [verificar](references/verificar.md).
+- Use `/bairros` para varrer a cidade bairro por bairro no mesmo nicho, sem depender só da busca geral do Maps. Leia as regras completas em [bairros](references/bairros.md).
+- Use `/prioridade` para ranquear os leads da planilha atual e mostrar quem abordar primeiro. Leia as regras completas em [prioridade](references/prioridade.md).
 - Use `/help` para ver a lista de todos os comandos com uma explicação curta de cada um.
 - Mostre a lista completa de comandos quando o usuário digitar `/help`, a qualquer momento, sem apagar o que já foi feito.
 
@@ -54,6 +57,15 @@
 - Se a ficha só tem telefone fixo e nenhum celular, descarte o lead.
 - Use `places details` com o place_id para confirmar endereço, telefone e os botões de contato de quem não tem site listado.
 - Mesmo com o filtro do Maps, faça no mínimo 4 buscas diferentes na cidade INTEIRA e junte os resultados, porque nem toda ficha mostra os botões certos na busca.
+
+## Verificação final antes de entregar
+
+- Antes de entregar qualquer planilha, passe TODOS os leads pelo checklist abaixo. Nenhum lead entra na planilha sem passar por ele.
+- **Site:** busque "[nome da empresa] site oficial" e "[nome da empresa] franquia". Se a marca tiver site corporativo, marque "Site da rede" com o endereço do site e jogue para o fim da lista. Se a empresa tiver domínio próprio, descarte. Só marque "Não" quando a busca não achar site nenhum da empresa nem da marca.
+- **WhatsApp:** confirme o status com prova publicada pela empresa (post, bio, botão de WhatsApp no perfil do Google ou no Maps). Sem prova, fica Provável. Número fixo sem celular publicado descarta o lead.
+- **Ativo:** confira se o lugar está aberto — ficha do Maps ativa, horário de funcionamento e avaliações recentes. Descarte quem fechou de forma permanente ou temporária, salvo se o usuário pedir para incluir.
+- **Dados completos:** endereço com número, telefone com DDD e link wa.me conferido. Endereço sem número vai com o aviso "confirmar antes de abordar".
+- Se um lead falhar em qualquer item do checklist, corrija a classificação ou descarte com o motivo registrado, nunca entregue com o dado duvidoso.
 
 ## Busca na cidade INTEIRA
 
@@ -132,6 +144,17 @@
 - Você também pode pedir no chat, como "já falei com o My Sorvetes", e o agente marca a caixinha na planilha para você.
 - Antes de qualquer busca nova (`/prospectar` ou `/mais`) do mesmo nicho e da mesma cidade, o agente lê a planilha que já existe para esse nicho e essa cidade e **nunca traz de volta um lead com a caixinha marcada** em Já falei?. O lead continua na planilha antiga para você consultar, mas some das buscas novas.
 - Quem está com a caixinha vazia continua aparecendo nas buscas novas normalmente, até você marcar.
+
+## Verificar, bairros e prioridade
+
+- Quando o usuário digitar `/verificar` com o nome de um lead, recheque só esse lead: busque o site oficial e a franquia da marca, confira a prova do WhatsApp e confira se o lugar ainda está aberto. Depois atualize a planilha: corrija o site para "Site da rede" se for franquia, corrija o status do WhatsApp se a prova mudou, ou tire o lead da lista se fechou ou se ganhou site próprio. Mostre no chat o que mudou.
+- Quando o usuário digitar `/verificar todos`, faça o mesmo para todos os leads da planilha atual, um por um, e entregue um resumo do que mudou.
+- Quando o usuário digitar `/bairros`, use o nicho e a cidade da busca atual (ou pergunte se não houver uma) e varra a cidade bairro por bairro: faça uma busca por bairro, com o nicho e o nome do bairro, começando pelo centro e pelos bairros maiores. Junte os resultados, tire os repetidos e os que já estão na planilha, aplique os 5 passos e a verificação final, e acrescente os novos na planilha. Diga no chat quantos bairros foram varridos e quantos leads novos entraram.
+- Quando o usuário digitar `/prioridade`, ranqueie os leads da planilha atual com a pontuação abaixo e mostre no chat os 5 primeiros para abordar, com o motivo da posição de cada um. Não mude a ordem da planilha, o ranking é só no chat.
+  - WhatsApp confirmado: +3 pontos. WhatsApp provável: +1 ponto. Testar número: 0 pontos.
+  - Sem site próprio: +2 pontos. Site da rede: -3 pontos.
+  - Endereço completo com número: +1 ponto. Endereço sem número: 0 pontos.
+  - Quem está com a caixinha marcada em Já falei? sai do ranking.
 
 ## Buscar mais, descartados e resumo
 
