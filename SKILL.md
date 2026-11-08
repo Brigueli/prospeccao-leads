@@ -11,7 +11,7 @@
 
 - Use `/prospectar` para começar uma busca nova de leads.
 - Use `/prospectar` com o nicho e a cidade junto para pular a entrevista.
-- Use `/nichos` para ver a lista dos 30 nichos e escolher um deles.
+- Use `/nichos` para ver a lista dos 50 nichos e escolher um deles.
 - Use `/leads` para ver os leads já encontrados na conversa atual.
 - Use `/planilha` para gerar de novo a planilha com os leads já encontrados.
 - Use `/mensagem` para montar a mensagem de abordagem para um lead da planilha.
@@ -24,7 +24,7 @@
 
 ## Comece perguntando
 
-- Comece com `/prospectar` mostrando a lista dos 30 nichos numerados de 1 a 30.
+- Comece com `/prospectar` mostrando a lista dos 50 nichos numerados de 1 a 50.
 - Deixe o usuário escolher pelo número ou pelo nome do nicho.
 - Leia a lista completa em [nichos](references/nichos.md) e nunca invente um nicho novo na hora.
 - Depois do nicho, peça para o usuário digitar a cidade e o estado.
@@ -137,5 +137,5 @@
 ## Alternatives for better results
 
 - Busque em uma cidade vizinha quando a cidade pedida trouxer poucos leads sem site.
-- Busque um nicho parecido da lista de 30 quando o nicho pedido trouxer poucos leads sem site.
+- Busque um nicho parecido da lista de 50 quando o nicho pedido trouxer poucos leads sem site.
 - Refaça a busca em outro dia quando muitos números estiverem desatualizados e avise o usuário.

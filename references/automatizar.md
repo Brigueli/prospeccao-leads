@@ -10,7 +10,7 @@ Ele NÃO envia mensagem sozinho pela conta pessoal do usuário no WhatsApp e NÃ
 
 Pergunte, nesta ordem, e só comece depois de todas as respostas:
 
-1. Quais nichos da lista de 30, podendo ser mais de um.
+1. Quais nichos da lista de 50, podendo ser mais de um.
 2. Quais cidades e estados, podendo ser mais de uma.
 3. Quantos envios por dia. Padrão seguro para começar: 20 por dia.
 4. Intervalo entre envios. Padrão: 1 envio a cada 30 minutos, só em horário comercial.
