@@ -73,6 +73,7 @@
 
 - Considere site próprio um domínio da empresa, como nomedaempresa.com.br.
 - Não considere Instagram, Facebook, Linktree ou perfil no Google como site próprio.
+- **Verifique a MARCA, não só a ficha do Maps: antes de marcar "Não" em site próprio, busque "[nome da empresa] site oficial" e "[nome da empresa] franquia". Se a marca for franquia ou rede com site corporativo (como Oggi oggisorvetes.com.br, Chiquinho chiquinho.com.br, Oh Delícia ohdeliciaacai.com.br, The Best Açaí thebestacai.com.br), a unidade NÃO é um lead sem site: marque "Site da rede" com o endereço do site da rede, deixe no fim da lista com a ressalva de que a decisão de site passa pela franqueadora, e nunca coloque no topo nem como "Não".**
 - Descarte quem tem site próprio, mesmo que o site seja simples ou desatualizado.
 - Marque como site da rede quando for franquia com site corporativo e sem site próprio da unidade.
 - Deixe quem tem site da rede no fim da lista, com a ressalva escrita, e nunca coloque no topo.
