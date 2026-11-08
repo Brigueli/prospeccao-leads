@@ -24,6 +24,22 @@ Escreva o telefone exatamente como a fonte mostrou, com DDD. Monte o link do Wha
 
 Ordene a planilha com WhatsApp confirmado primeiro, depois WhatsApp provável e por último os números para testar. Dentro de cada grupo, ordene pelo motivo mais forte.
 
+## Visual da planilha
+
+Deixe a planilha bonita e fácil de ler, sempre com o mesmo visual abaixo.
+
+- Aba principal chamada Leads, com as 11 colunas nesta ordem.
+- Linha de título no topo com o nicho, a cidade e a data da busca, em letras grandes e em negrito.
+- Cabeçalho das colunas em negrito, com fundo azul-marinho #1A305A e letras brancas.
+- Congele a linha do cabeçalho e aplique filtro em todas as colunas.
+- Linhas alternadas com fundo branco e cinza bem claro, para facilitar a leitura.
+- Telefone e link do WhatsApp sem quebrar a linha e com a largura certa para caber o conteúdo.
+- Coluna WhatsApp confirmado com cor: Sim em verde, Provável em amarelo e Testar número em vermelho.
+- Link do WhatsApp clicável, no formato https://wa.me/55 mais DDD mais número.
+- Largura das colunas ajustada ao conteúdo, sem texto cortado: nome e endereço mais largos, telefone e WhatsApp confirmado mais estreitos.
+- Segunda aba chamada Resumo, com o total de leads, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos descartados e o nome do melhor lead.
+- Terceira aba chamada Como foi feita a busca, com os 5 passos aplicados, as buscas feitas e a lista de descartados com o motivo de cada um.
+
 ## Nome do arquivo
 
 Salve a planilha em ~/workspace/your_files/prospeccao-leads/ com o nome leads, traço, nicho em letras minúsculas e com traço no lugar do espaço, traço, cidade em letras minúsculas e com traço no lugar do espaço, traço e a data no formato ano, mês e dia. Entregue o arquivo na mesma mensagem que diz que a busca está pronta.

@@ -3,7 +3,7 @@
 ## A regra da barra
 
 - Use / na frente para chamar a skill e qualquer comando.
-- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem` e `/help`.
+- Os comandos que funcionam são `/prospectar`, `/nichos`, `/leads`, `/planilha`, `/mensagem`, `/mais`, `/descartados`, `/resumo` e `/help`.
 - Os comandos que não funcionam são `$prospectar`, `prospectar` sem / e `quero prospectar` sem /.
 - Trate qualquer mensagem sem / como mensagem normal e a skill não ativa sem o comando.
 
@@ -15,6 +15,9 @@
 - Use `/leads` para ver os leads já encontrados na conversa atual.
 - Use `/planilha` para gerar de novo a planilha com os leads já encontrados.
 - Use `/mensagem` para montar a mensagem de abordagem para um lead da planilha.
+- Use `/mais` para buscar mais leads do mesmo nicho na mesma cidade, sem repetir os leads já encontrados.
+- Use `/descartados` para ver quem foi descartado na busca atual e o motivo do descarte de cada um.
+- Use `/resumo` para ver um resumo curto da busca atual: quantos leads, quantos confirmados, quantos prováveis, quantos para testar e qual é o melhor lead.
 - Use `/help` para ver a lista de todos os comandos com uma explicação curta de cada um.
 - Mostre a lista completa de comandos quando o usuário digitar `/help`, a qualquer momento, sem apagar o que já foi feito.
 
@@ -32,22 +35,26 @@
 ## Os 5 passos da busca
 
 - Faça os 5 passos abaixo em ordem em toda busca e nunca pule um deles.
-- Busque o nicho na cidade no Maps e no Google e junte os resultados das duas fontes.
+- Busque o nicho na cidade INTEIRA no Maps e no Google, com várias buscas diferentes, e junte os resultados de todas as fontes.
 - Descarte quem já tem site próprio e fique só com quem não tem site próprio.
 - Fique só com quem tem celular ou WhatsApp e descarte quem só tem telefone fixo sem celular publicado.
 - Marque como WhatsApp confirmado só quando a própria empresa publica o número como WhatsApp.
 - Avise quando o número está em formato antigo ou incompleto e peça para testar antes de mandar mensagem.
 - Entregue endereço, telefone, link do WhatsApp e o motivo de ser um bom lead para cada lead da lista.
 
-## Busca no Maps e no Google
+## Busca na cidade INTEIRA
 
-- Busque primeiro com `browser.search` usando o nicho e a cidade digitados, em português.
-- Use os resultados de lugar que voltarem da busca e pegue nome, endereço, telefone e site de cada um.
-- Busque de novo com variações do nome do nicho quando o primeiro resultado trouxer poucos lugares.
-- Busque também em listas locais, como TeleListas, Guia Fácil e Apontador, quando o Maps trouxer poucos lugares.
+- A busca cobre a cidade INTEIRA que o usuário digitou, nunca só o centro e nunca só a primeira página de resultados.
+- Nunca pare na primeira busca: faça no mínimo 4 buscas diferentes antes de fechar a lista.
+- Varie as buscas em cada rodada: o nicho com a cidade, o nicho com "centro" e a cidade, o nicho com "delivery" e a cidade, o nicho com "bairro" e a cidade, e variações do nome do nicho, como sinônimos e o nome no singular e no plural.
+- Busque também por bairros e regiões da cidade quando souber os nomes deles, e por ruas e avenidas movimentadas, para alcançar quem não aparece na busca geral.
+- Busque também em listas locais, como TeleListas, Guia Fácil, Apontador, Lista Mais e Restaurant Guru, quando o Maps trouxer poucos lugares.
+- Junte os resultados de todas as buscas e tire os repetidos pelo nome, pelo telefone e pelo endereço antes de montar a lista.
+- Mire em pelo menos 10 leads por busca quando a cidade tiver esse tanto de empresas do nicho sem site próprio; só entregue menos quando a cidade realmente não tiver mais.
 - Use `places details` com o place_id para confirmar endereço, telefone e links de quem não tem site listado.
 - Nomeie só lugares que uma ferramenta devolveu e nunca invente um lugar.
 - Descarte lugares fechados de forma permanente ou temporária, salvo se o usuário pedir para incluir.
+- Guarde a lista de descartados com o motivo de cada um, para o comando `/descartados` mostrar depois.
 
 ## Descarte de quem tem site próprio
 
@@ -93,6 +100,12 @@
 - Leia o modelo em [mensagem](references/mensagem.md) e adapte com o nome da empresa, o nicho e o que ela não tem hoje.
 - Faça a mensagem curta, direta e em português, com o nome da empresa e a oferta de site.
 - Nunca mande a mensagem para a empresa sozinho e entregue o texto para o usuário copiar.
+
+## Buscar mais, descartados e resumo
+
+- Quando o usuário digitar `/mais`, busque mais leads do mesmo nicho na mesma cidade, com buscas novas que ainda não foram feitas, sem repetir nenhum lead já encontrado, e acrescente os novos na planilha.
+- Quando o usuário digitar `/descartados`, mostre no chat quem foi descartado na busca atual, com o motivo de cada descarte, como site próprio, só telefone fixo ou fechado.
+- Quando o usuário digitar `/resumo`, mostre no chat quantos leads a busca atual tem, quantos com WhatsApp confirmado, quantos prováveis, quantos para testar, quantos foram descartados e qual é o melhor lead, com o telefone dele.
 
 ## Available connectors
 
