@@ -63,7 +63,7 @@
 - Busque também por bairros e regiões da cidade quando souber os nomes deles, e por ruas e avenidas movimentadas, para alcançar quem não aparece na busca geral.
 - Busque também em listas locais, como TeleListas, Guia Fácil, Apontador, Lista Mais e Restaurant Guru, quando o Maps trouxer poucos lugares.
 - Junte os resultados de todas as buscas e tire os repetidos pelo nome, pelo telefone e pelo endereço antes de montar a lista.
-- Mire em pelo menos 10 leads por busca quando a cidade tiver esse tanto de empresas do nicho sem site próprio; só entregue menos quando a cidade realmente não tiver mais.
+- Mire no MÁXIMO de leads que conseguir encontrar: não pare em 10. Continue com buscas novas (outros bairros, variações do nome do nicho, listas locais, Instagram, iFood) até as buscas pararem de trazer nomes novos. Só entregue menos quando a cidade realmente não tiver mais empresas do nicho sem site próprio.
 - Use `places details` com o place_id para confirmar endereço, telefone e links de quem não tem site listado.
 - Nomeie só lugares que uma ferramenta devolveu e nunca invente um lugar.
 - Descarte lugares fechados de forma permanente ou temporária, salvo se o usuário pedir para incluir.
