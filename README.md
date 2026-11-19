@@ -46,3 +46,7 @@ A planilha tem as colunas: Nome da empresa, Nicho, Cidade e estado, Endereço, T
 ## Automação
 
 O comando `/automatizar` prospecta vários nichos e cidades e monta a fila de envio, com data e hora, telefone, modelo e custo. Ele só funciona pela API oficial do WhatsApp Business (Cloud API da Meta). Ele não envia pela conta pessoal e não usa programa não oficial. Para ligar, precisa de empresa verificada na Meta, número exclusivo, app e conta WhatsApp Business, token guardado com segurança, webhook, template aprovado e cartão em BRL. Mensagem de marketing para o Brasil custa cerca de R$ 0,3217 por mensagem entregue.
+
+## Aplicação local de prospecção
+
+Além da skill acima, a pasta [`app/`](app/README.md) contém um sistema web local (Node + SQLite) para configurar campanhas, prospectar, revisar mensagens e abrir conversas no WhatsApp Web com o texto preenchido. Veja `app/README.md`.

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prospector local</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Prospector</h1>
+    <nav id="nav">
+      <button data-view="campaigns">Campanhas</button>
+      <button data-view="pipeline">Pipeline</button>
+      <button data-view="dnc">Não contatar</button>
+    </nav>
+    <div class="grow"></div>
+    <a class="btn wa" href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer"
+       title="Abre o WhatsApp Web em outra aba. O QR code é exibido pelo próprio WhatsApp; este sistema não lê nem verifica a sua sessão.">Conectar ao WhatsApp Web</a>
+  </header>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <main id="view"></main>
+  <div id="modal" class="modal" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
