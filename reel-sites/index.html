@@ -99,6 +99,7 @@
       .cta { top: 300px; left: 60px; width: 840px; text-align: center; font-size: 66px; font-weight: 800; line-height: 1.2; }
       .kw { top: 640px; left: 140px; width: 680px; text-align: center; font-size: 160px; font-weight: 800; letter-spacing: .04em; padding: 44px 0; color: var(--on-accent); background: linear-gradient(90deg, var(--accent), #35a8ff); border-radius: 60px; box-shadow: 0 0 90px rgba(var(--accent-rgb),.85); }
       .arrow { top: 960px; left: 0; width: 960px; text-align: center; font-size: 150px; }
+      .site7 { top: 1340px; left: 140px; width: 680px; text-align: center; font-family: var(--font-mono); font-size: 44px; font-weight: 700; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 24px 0; background: rgba(var(--accent-rgb),.1); box-shadow: 0 0 40px rgba(var(--accent-rgb),.4); }
       .cf { position: absolute; width: 18px; height: 34px; border-radius: 4px; z-index: 3; }
     </style>
   </head>
@@ -224,6 +225,7 @@
         <div class="kw" id="kw7">SITE</div>
         <div class="arrow" id="arr7">👇</div>
         <div class="sub" style="top:1180px" id="sub7">Eu te mando uma proposta no direct.</div>
+        <div class="site7" id="site7">🌐 brigueli-ai.online</div>
       </div>
 
       <!-- ============ ÁUDIO ============ -->
@@ -405,6 +407,8 @@
       tl.fromTo("#arr7", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4 }, 25.3);
       tl.to("#arr7", { y: 30, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut" }, 25.7);
       tl.fromTo("#sub7", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 25.5);
+      tl.fromTo("#site7", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 26.1);
+      tl.to("#site7", { boxShadow: "0 0 70px rgba(25,211,230,.9)", duration: 0.4, yoyo: true, repeat: 3 }, 26.7);
       const COL = ["#19d3e6", "#ffffff", "#1e6fe0", "#25d366", "#6fe8f5"];
       for (let i = 0; i < 40; i++) {
         const c = document.createElement("div");
