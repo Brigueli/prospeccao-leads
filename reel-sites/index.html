@@ -56,14 +56,14 @@
       .caret { display: inline-block; width: 4px; height: 48px; background: #111; }
       .row { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding: 22px 28px; border-radius: 24px; background: rgba(255,255,255,.07); font-size: 38px; font-weight: 600; }
       .row small { font-family: var(--font-mono); font-size: 26px; color: var(--dim); }
-      .row.miss { background: rgba(var(--alert-rgb),.16); color: var(--alert); border: 2px dashed var(--alert); }
+      .row.miss { background: rgba(var(--accent-rgb),.16); color: var(--accent); border: 2px dashed var(--accent); }
       .bars { display: flex; align-items: flex-end; gap: 14px; height: 170px; margin-top: 24px; }
       .bar { flex: 1; border-radius: 14px; background: rgba(255,255,255,.13); }
       .bar.hot { background: linear-gradient(#35e0f0, var(--accent-deep)); box-shadow: 0 0 30px rgba(var(--accent-rgb),.7); }
       .prog { height: 30px; border-radius: 999px; background: rgba(255,255,255,.1); margin-top: 22px; overflow: hidden; }
       .prog i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--accent-deep), var(--accent)); box-shadow: 0 0 24px rgba(var(--accent-rgb),.9); }
-      .pct { font-size: 110px; font-weight: 800; color: var(--alert); text-shadow: 0 0 30px rgba(var(--alert-rgb),.6); }
-      .badge { position: absolute !important; top: -26px; right: 30px; background: var(--alert); color: #fff; font-weight: 800; font-size: 30px; padding: 12px 26px; border-radius: 999px; box-shadow: 0 0 30px rgba(var(--alert-rgb),.8); }
+      .pct { font-size: 110px; font-weight: 800; color: var(--accent); text-shadow: 0 0 30px rgba(var(--accent-rgb),.6); }
+      .badge { position: absolute !important; top: -26px; right: 30px; background: var(--accent); color: var(--on-accent); font-weight: 800; font-size: 30px; padding: 12px 26px; border-radius: 999px; box-shadow: 0 0 30px rgba(var(--accent-rgb),.8); }
       .chips { display: flex; gap: 16px; margin-top: 26px; flex-wrap: wrap; }
       .chip { padding: 16px 30px; border-radius: 999px; font-size: 34px; font-weight: 700; background: rgba(255,255,255,.1); }
       .chip.on { color: var(--on-accent); background: var(--accent); box-shadow: 0 0 28px rgba(var(--accent-rgb),.6); }
@@ -79,8 +79,8 @@
       .stars { font-size: 52px; letter-spacing: 6px; margin-top: 20px; }
 
       /* whatsapp */
-      .chat { margin-top: 18px; display: flex; flex-direction: column; gap: 18px; }
-      .bub { max-width: 600px; padding: 24px 32px; border-radius: 32px; font-size: 38px; font-weight: 600; line-height: 1.2; }
+      .chat { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+      .bub { max-width: 600px; padding: 16px 28px; border-radius: 32px; font-size: 38px; font-weight: 600; line-height: 1.2; }
       .bub.in { background: #2a2a2a; align-self: flex-start; border-bottom-left-radius: 8px; }
       .bub.out { background: #075e54; align-self: flex-end; border-bottom-right-radius: 8px; }
       .bub small { display: block; font-size: 28px; opacity: .6; margin-top: 8px; text-align: right; }
@@ -97,9 +97,9 @@
 
       /* cta */
       .cta { top: 300px; left: 60px; width: 840px; text-align: center; font-size: 66px; font-weight: 800; line-height: 1.2; }
-      .kw { top: 640px; left: 140px; width: 680px; text-align: center; font-size: 160px; font-weight: 800; letter-spacing: .04em; padding: 44px 0; color: var(--on-accent); background: linear-gradient(90deg, var(--accent), #35a8ff); border-radius: 60px; box-shadow: 0 0 90px rgba(var(--accent-rgb),.85); }
+      .kw { top: 640px; left: 60px; width: 840px; text-align: center; font-size: 104px; font-weight: 800; letter-spacing: .04em; padding: 44px 0; color: var(--on-accent); background: linear-gradient(90deg, var(--accent), #35a8ff); border-radius: 60px; box-shadow: 0 0 90px rgba(var(--accent-rgb),.85); }
       .arrow { top: 960px; left: 0; width: 960px; text-align: center; font-size: 150px; }
-      .site7 { top: 1340px; left: 140px; width: 680px; text-align: center; font-family: var(--font-mono); font-size: 44px; font-weight: 700; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 24px 0; background: rgba(var(--accent-rgb),.1); box-shadow: 0 0 40px rgba(var(--accent-rgb),.4); }
+      .site7 { top: 1340px; left: 110px; width: 740px; text-align: center; font-family: var(--font-mono); font-size: 44px; font-weight: 700; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 24px 0; background: rgba(var(--accent-rgb),.1); box-shadow: 0 0 40px rgba(var(--accent-rgb),.4); }
       .cf { position: absolute; width: 18px; height: 34px; border-radius: 4px; z-index: 3; }
     </style>
   </head>
@@ -111,64 +111,64 @@
 
       <!-- ============ 1. GOOGLE ============ -->
       <div id="sc1" class="clip scene" data-start="0" data-duration="4" data-track-index="0">
-        <div class="num">01/07</div><div class="tag">Busca</div>
+        <div class="num">01/07</div><div class="tag">Prospecção</div>
         <div class="float f1" style="left:730px;top:130px">🔎</div>
         <div class="card" id="card1">
-          <div class="label">Google</div>
+          <div class="label">Nova prospecção</div>
           <div class="search"><span>🔎</span><span id="typed"></span><span class="caret" id="caret1"></span></div>
-          <div class="row r1"><span>💈 Barbearia Concorrente A</span><small>site ✓</small></div>
-          <div class="row r1"><span>💈 Barbearia Concorrente B</span><small>site ✓</small></div>
-          <div class="row miss" id="miss1"><span>❌ Seu negócio</span><small>não aparece</small></div>
+          <div class="row r1"><span>💈 Barbearia do João</span><small>sem site</small></div>
+          <div class="row r1"><span>💈 Studio Premium</span><small>sem site</small></div>
+          <div class="row miss" id="miss1"><span>🎯 +47 leads encontrados</span><small>WhatsApp ✓</small></div>
         </div>
-        <div class="title">Google</div>
-        <div class="sub">Seu cliente procura aqui antes de te chamar no direct.</div>
+        <div class="title">Encontre</div>
+        <div class="sub">Empresas por nicho e cidade, em segundos.</div>
       </div>
 
       <!-- ============ 2. SEM SITE ============ -->
       <div id="sc2" class="clip scene" data-start="4" data-duration="4" data-track-index="0">
-        <div class="num">02/07</div><div class="tag">Só Instagram</div>
+        <div class="num">02/07</div><div class="tag">Filtros</div>
         <div class="float f2" style="left:730px;top:130px">📱</div>
         <div class="card" id="card2">
-          <div class="badge" id="warn2">⚠️ INVISÍVEL</div>
-          <div class="label">Presença online</div>
+          <div class="badge" id="warn2">✅ QUALIFICADOS</div>
+          <div class="label">Leads por filtro</div>
           <div class="bars">
             <div class="bar" style="height:35%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:40%"></div>
             <div class="bar" style="height:70%"></div><div class="bar" style="height:50%"></div><div class="bar hot" style="height:95%"></div>
           </div>
-          <div class="label" style="margin-top:30px">Quem te acha no Google</div>
+          <div class="label" style="margin-top:30px">Com WhatsApp e sem site</div>
           <div class="prog"><i id="p2"></i></div>
-          <div class="pct" id="pct2">0%</div>
+          <div class="pct" id="pct2">87%</div>
         </div>
-        <div class="title">Sem site</div>
-        <div class="sub">Quem busca não te encontra.</div>
+        <div class="title">Filtre</div>
+        <div class="sub">Só quem tem WhatsApp e ainda não tem site.</div>
       </div>
 
       <!-- ============ 3. BUSCAS ============ -->
       <div id="sc3" class="clip scene" data-start="8" data-duration="4" data-track-index="0">
-        <div class="num">03/07</div><div class="tag">Todo mês</div>
+        <div class="num">03/07</div><div class="tag">Sua lista</div>
         <div class="float f3" style="left:730px;top:130px">📍</div>
         <div class="card" id="card3">
-          <div class="label">Buscas na sua cidade</div>
+          <div class="label">Leads encontrados</div>
           <div class="big" id="n3">0</div>
           <div class="label" style="margin-top:14px">Exemplo ilustrativo</div>
           <div class="prog"><i id="p3"></i></div>
           <div class="chips" style="margin-top:30px">
-            <span class="chip pin" id="pin1">📍 Centro</span><span class="chip pin" id="pin2">📍 Zona Sul</span><span class="chip pin" id="pin3">📍 Perto de mim</span>
+            <span class="chip pin" id="pin1">📍 Barbearias</span><span class="chip pin" id="pin2">📍 Salões</span><span class="chip pin" id="pin3">📍 Pet shops</span>
           </div>
-          <div class="row" id="rowc3" style="margin-top:26px"><span>➡️ Indo pro concorrente</span><small>−100%</small></div>
+          <div class="row" id="rowc3" style="margin-top:26px"><span>📂 Organizados em planilha</span><small>pronto</small></div>
         </div>
-        <div class="title">Buscas</div>
-        <div class="sub">Essas buscas vão direto pro concorrente.</div>
+        <div class="title">Leads</div>
+        <div class="sub">Tudo organizado, pronto pra abordar.</div>
       </div>
 
       <!-- ============ 4. CONFIANÇA ============ -->
       <div id="sc4" class="clip scene" data-start="12" data-duration="4" data-track-index="0">
-        <div class="num">04/07</div><div class="tag">Site oficial</div>
-        <div class="float f4" style="left:730px;top:130px">🔒</div>
+        <div class="num">04/07</div><div class="tag">Ficha do lead</div>
+        <div class="float f4" style="left:730px;top:130px">📇</div>
         <div class="card" id="card4">
-          <div class="label">Seu site no ar</div>
+          <div class="label">Contato do lead</div>
           <div class="browser" id="brw">
-            <div class="bhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url"><b>🔒</b> seunegocio.com.br</span></div>
+            <div class="bhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url"><b>🔒</b> brigueli-ai.online</span></div>
             <div class="bbody">
               <div class="blk b4" style="height:30px;width:55%"></div>
               <div class="blk b4" style="height:150px;margin-top:18px;background:linear-gradient(90deg,rgba(var(--accent-rgb),.55),rgba(255,255,255,.08))"></div>
@@ -177,54 +177,54 @@
             </div>
           </div>
           <div class="chips">
-            <span class="chip on c4">Preço</span><span class="chip on c4">Horário</span><span class="chip on c4">Endereço</span>
+            <span class="chip on c4">Telefone</span><span class="chip on c4">WhatsApp</span><span class="chip on c4">Endereço</span>
           </div>
         </div>
-        <div class="title">Confiança</div>
-        <div class="sub">Tudo num link só, com a cara do seu negócio.</div>
+        <div class="title">Contato</div>
+        <div class="sub">Número e link do WhatsApp prontos pra usar.</div>
       </div>
 
       <!-- ============ 5. WHATSAPP ============ -->
       <div id="sc5" class="clip scene" data-start="16" data-duration="4" data-track-index="0">
-        <div class="num">05/07</div><div class="tag">Entra e sai</div>
+        <div class="num">05/07</div><div class="tag">Conversa</div>
         <div class="float f5" style="left:730px;top:130px">💬</div>
         <div class="card" id="card5">
-          <div class="label">Contatos hoje</div>
+          <div class="label">Conversas iniciadas</div>
           <div class="big" id="n5" style="font-size:110px">+0</div>
           <div class="chat">
-            <div class="bub in" id="bb1">Oi! Quero agendar um horário 😃<small>14:02</small></div>
-            <div class="bub out" id="bb2">Claro! Qual dia fica bom? ✅<small>14:02 ✔✔</small></div>
-            <div class="bub in" id="bb3">Amanhã às 10h! 🙌<small>14:03</small></div>
+            <div class="bub in" id="bb1">Oi! Vi sua mensagem, como funciona? 😃<small>14:02</small></div>
+            <div class="bub out" id="bb2">Te mostro agora! Posso ligar? ✅<small>14:02 ✔✔</small></div>
+            <div class="bub in" id="bb3">Pode sim! 🙌<small>14:03</small></div>
           </div>
           <div class="notif" id="nt5">💬 Nova mensagem</div>
         </div>
         <div class="title">WhatsApp</div>
-        <div class="sub">O cliente clica e já agenda.</div>
+        <div class="sub">Chame direto e comece a vender.</div>
       </div>
 
       <!-- ============ 6. SEU SITE ============ -->
       <div id="sc6" class="clip scene" data-start="20" data-duration="4" data-track-index="0">
-        <div class="num">06/07</div><div class="tag">Prazo</div>
+        <div class="num">06/07</div><div class="tag">Rotina</div>
         <div class="float f6" style="left:730px;top:130px">🚀</div>
         <div class="card" id="card6">
-          <div class="label">Seu site, pronto em</div>
-          <div class="big" id="n6" style="font-size:110px">0 dias</div>
-          <div class="days"><div class="day" id="d1">DIA<b>1</b></div><div class="day" id="d2">DIA<b>2</b></div><div class="day" id="d3">DIA<b>3</b></div></div>
-          <div class="step s6"><span class="ck" id="k1">✓</span>Design do site</div>
-          <div class="step s6"><span class="ck" id="k2">✓</span>Textos e fotos</div>
-          <div class="step s6"><span class="ck" id="k3">✓</span>No ar no Google</div>
+          <div class="label">Prospecção em</div>
+          <div class="big" id="n6" style="font-size:110px">0 passos</div>
+          <div class="days"><div class="day" id="d1">PASSO<b>1</b></div><div class="day" id="d2">PASSO<b>2</b></div><div class="day" id="d3">PASSO<b>3</b></div></div>
+          <div class="step s6"><span class="ck" id="k1">✓</span>Encontre empresas</div>
+          <div class="step s6"><span class="ck" id="k2">✓</span>Chame no WhatsApp</div>
+          <div class="step s6"><span class="ck" id="k3">✓</span>Feche a venda</div>
         </div>
-        <div class="title">Seu site</div>
-        <div class="sub">Eu monto pra você em poucos dias.</div>
+        <div class="title">Vendas</div>
+        <div class="sub">Mais clientes, menos tempo procurando.</div>
       </div>
 
       <!-- ============ 7. CTA ============ -->
       <div id="sc7" class="clip scene" data-start="24" data-duration="4" data-track-index="0">
         <div class="num">07/07</div>
-        <div class="cta" id="cta7">Quer aparecer no Google?<br />Comenta:</div>
-        <div class="kw" id="kw7">SITE</div>
+        <div class="cta" id="cta7">Quer encontrar clientes<br />sem perder tempo?</div>
+        <div class="kw" id="kw7">TESTE GRÁTIS</div>
         <div class="arrow" id="arr7">👇</div>
-        <div class="sub" style="top:1180px" id="sub7">Eu te mando uma proposta no direct.</div>
+        <div class="sub" style="top:1180px" id="sub7">Acesse o link e comece a prospectar.</div>
         <div class="site7" id="site7">🌐 brigueli-ai.online</div>
       </div>
 
@@ -345,24 +345,24 @@
       });
 
       /* ===== CENA 1: digita a busca, resultados caem, "seu negócio" some ===== */
-      const typed = { n: 0 }, TXT = "barbearia perto de mim";
+      const typed = { n: 0 }, TXT = "barbearia em Campinas";
       tl.to(typed, { n: TXT.length, duration: 0.95, ease: "none", onUpdate: () => { document.getElementById("typed").textContent = TXT.slice(0, Math.round(typed.n)); } }, 0.5);
       tl.fromTo("#caret1", { opacity: 1 }, { opacity: 0, duration: 0.2, yoyo: true, repeat: 7, ease: "none" }, 0.2);
       tl.fromTo("#sc1 .r1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25, ease: "back.out(1.6)" }, 1.6);
       tl.fromTo("#miss1", { opacity: 0, x: 80, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 2.2);
       tl.to("#miss1", { x: 10, duration: 0.06, yoyo: true, repeat: 7, ease: "none" }, 2.7);
-      tl.to("#miss1", { boxShadow: "0 0 40px rgba(var(--alert-rgb),.9)", duration: 0.4, yoyo: true, repeat: 3 }, 2.7);
+      tl.to("#miss1", { boxShadow: "0 0 40px rgba(var(--accent-rgb),.9)", duration: 0.4, yoyo: true, repeat: 3 }, 2.7);
 
       /* ===== CENA 2: barras sobem, aviso pulsando, 0% ===== */
       tl.fromTo("#sc2 .bar", { scaleY: 0, transformOrigin: "bottom" }, { scaleY: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.6)" }, 4.55);
       tl.fromTo("#warn2", { opacity: 0, scale: 0, rotation: 15 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(3)" }, 5.55);
       tl.to("#warn2", { scale: 1.12, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, 6.1);
-      tl.to("#p2", { width: "3%", duration: 0.7, ease: "power2.out" }, 5.3);
+      tl.to("#p2", { width: "87%", duration: 0.7, ease: "power2.out" }, 5.3);
       tl.fromTo("#pct2", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, transformOrigin: "left center", duration: 0.5, ease: "back.out(2)" }, 5.4);
 
       /* ===== CENA 3: contador, pins, seta pro concorrente ===== */
       const c3 = { v: 0 };
-      tl.to(c3, { v: 2791, duration: 1.8, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v).toLocaleString("pt-BR"); } }, 8.5);
+      tl.to(c3, { v: 128, duration: 1.8, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v).toLocaleString("pt-BR"); } }, 8.5);
       tl.to("#p3", { width: "100%", duration: 1.8, ease: "power2.out" }, 8.5);
       tl.fromTo(".pin", { opacity: 0, scale: 0, y: -40 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, stagger: 0.25, ease: "back.out(3)" }, 9.25);
       tl.fromTo("#rowc3", { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 10.35);
@@ -386,7 +386,7 @@
 
       /* ===== CENA 6: dias + checklist ===== */
       const c6 = { v: 0 };
-      tl.to(c6, { v: 3, duration: 1.0, ease: "none", onUpdate: () => { document.getElementById("n6").textContent = Math.round(c6.v) + " dias"; } }, 20.6);
+      tl.to(c6, { v: 3, duration: 1.0, ease: "none", onUpdate: () => { document.getElementById("n6").textContent = Math.round(c6.v) + " passos"; } }, 20.6);
       tl.fromTo(["#d1", "#d2", "#d3"], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.15, ease: "back.out(2)" }, 20.65);
       tl.to("#d1", { backgroundColor: "rgba(25,211,230,1)", color: "#04121f", duration: 0.2 }, 20.8);
       tl.to("#d1 b", { color: "#04121f", duration: 0.2 }, 20.8);
