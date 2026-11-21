@@ -4,6 +4,7 @@ import { loadFont } from "@remotion/fonts";
 import { Video, TOTAL } from "./Video";
 import { W, H } from "./lib";
 import { SHORTS } from "./shorts";
+import { CarouselSlide, SLIDE_W, SLIDE_H } from "./carousels";
 
 /** 120 fps OBRIGATÓRIO (regra do estúdio). As animações são em segundos, então o fps não muda a velocidade. */
 export const FPS = 120;
@@ -15,6 +16,7 @@ export const Root: React.FC = () => (
   <>
     <Composition id="Motion" component={Video} durationInFrames={Math.round(TOTAL * FPS)} fps={FPS} width={W} height={H} defaultProps={{ watermark: false }} />
     <Composition id="MotionWatermark" component={Video} durationInFrames={Math.round(TOTAL * FPS)} fps={FPS} width={W} height={H} defaultProps={{ watermark: true }} />
+    <Composition id="Slide" component={CarouselSlide} durationInFrames={1} fps={30} width={SLIDE_W} height={SLIDE_H} defaultProps={{ c: 0, i: 0 }} />
     {SHORTS.map((v) => (
       <Composition key={v.id} id={v.id} component={v.Comp} durationInFrames={Math.round(v.TOTAL * FPS)} fps={FPS} width={W} height={H} defaultProps={{ watermark: false }} />
     ))}
