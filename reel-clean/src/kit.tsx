@@ -1,6 +1,9 @@
 import React from "react";
 import { AbsoluteFill, Audio, Img, Sequence, staticFile } from "remotion";
-import { Center, E, F, FONT, Hand, Letters, PhoneOutline, Scene, Underline, Words, W, ip, popStyle, prog, slideStyle } from "./lib";
+import { Center, E, F as LibF, FONT, Hand, Letters, PhoneOutline, Scene, Underline, Words, W, ip, popStyle, prog, slideStyle } from "./lib";
+
+/** Câmera dos vídeos curtos: igual ao F do lib, com zoom limitado a 1,15 (cards de 860 px não encostam na borda). */
+export const F = (t: number, x: number, y: number, s = 1.25, r = 0, rx = 0, ry = 0) => LibF(t, x, y, Math.min(s, 1.15), r, rx, ry);
 
 /* Peças compartilhadas dos vídeos curtos da Brigueli.ai (estilo Motion Clean).
    Cor única de destaque: ciano #08CADB (CSS oficial do site). NÃO altere o lib.tsx. */
@@ -150,4 +153,4 @@ export const Soundtrack: React.FC<{ fps: number; words: Word[]; total: number; v
 export const Stage: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <AbsoluteFill style={{ background: BG, fontFamily: FONT }}>{children}</AbsoluteFill>
 );
-export { Center, E, F, FONT, Hand, Letters, PhoneOutline, Scene, Underline, Words, W, ip, popStyle, prog, slideStyle };
+export { Center, E, FONT, Hand, Letters, PhoneOutline, Scene, Underline, Words, W, ip, popStyle, prog, slideStyle };
