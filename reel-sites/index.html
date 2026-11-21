@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #060606;
+        --ink: #ffffff;
+        --dim: #8a8a8a;
+        --red: #ff2a2a;
+        --red-deep: #b40000;
+        --glass: rgba(34, 34, 34, 0.85);
+        --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+        --font-mono: "JetBrains Mono", "Courier New", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px; overflow: hidden;
+        background: var(--ground);
+        font-family: var(--font-display);
+        color: var(--ink);
+      }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+      /* fundo: faixas vermelhas diagonais */
+      .bg { position: absolute; inset: 0; z-index: 0; }
+      .streak {
+        position: absolute; width: 1800px; height: 220px;
+        background: linear-gradient(90deg, transparent, rgba(255,42,42,0.55), transparent);
+        filter: blur(40px); transform: rotate(-35deg);
+      }
+      .s1 { left: -300px; top: 250px; }
+      .s2 { left: -200px; top: 1450px; opacity: 0.8; }
+      .dots {
+        position: absolute; right: 40px; top: 70px; width: 260px; height: 200px;
+        background-image: radial-gradient(rgba(255,255,255,0.25) 2px, transparent 2px);
+        background-size: 26px 26px;
+      }
+
+      .clip { position: absolute; inset: 0; z-index: 1; }
+      .scene { display: flex; flex-direction: column; align-items: center; }
+
+      .tag {
+        position: absolute; top: 210px;
+        font-family: var(--font-mono); font-size: 34px; letter-spacing: 0.18em;
+        color: var(--red); border: 3px solid var(--red); border-radius: 999px;
+        padding: 14px 40px; text-transform: uppercase;
+      }
+      .card {
+        position: absolute; top: 330px; left: 90px; width: 900px;
+        background: var(--glass); border: 2px solid rgba(255,255,255,0.08);
+        border-radius: 48px; padding: 56px 60px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 2px 0 rgba(255,255,255,0.06);
+      }
+      .label { font-family: var(--font-mono); font-size: 30px; letter-spacing: 0.12em; color: var(--dim); text-transform: uppercase; }
+      .big { font-size: 150px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-top: 18px; }
+      .title {
+        position: absolute; top: 1220px; width: 100%; text-align: center;
+        font-size: 190px; font-weight: 800; letter-spacing: -0.05em;
+        color: #fff; text-shadow: 0 0 30px rgba(255,42,42,0.9), 0 0 80px rgba(255,42,42,0.6);
+      }
+      .sub {
+        position: absolute; top: 1520px; width: 100%; text-align: center;
+        font-size: 56px; font-weight: 600; color: #e8e8e8; padding: 0 110px;
+      }
+
+      /* componentes */
+      .search {
+        background: #fff; color: #111; border-radius: 999px; padding: 30px 44px;
+        font-size: 44px; font-weight: 600; margin-top: 34px;
+      }
+      .row {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-top: 26px; padding: 26px 32px; border-radius: 26px;
+        background: rgba(255,255,255,0.06); font-size: 40px; font-weight: 600;
+      }
+      .row.miss { background: rgba(255,42,42,0.16); color: var(--red); border: 2px dashed var(--red); }
+      .row small { font-family: var(--font-mono); font-size: 28px; color: var(--dim); }
+      .bars { display: flex; align-items: flex-end; gap: 16px; height: 190px; margin-top: 34px; }
+      .bar { flex: 1; border-radius: 16px; background: rgba(255,255,255,0.12); }
+      .bar.hot { background: linear-gradient(#ff4a4a, #c40000); box-shadow: 0 0 30px rgba(255,42,42,0.7); }
+      .prog { height: 34px; border-radius: 999px; background: rgba(255,255,255,0.1); margin-top: 28px; overflow: hidden; }
+      .prog i { display: block; height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #ff4a4a, #ff2a2a); box-shadow: 0 0 24px rgba(255,42,42,0.9); }
+      .pct { font-size: 120px; font-weight: 800; color: var(--red); text-shadow: 0 0 30px rgba(255,42,42,0.6); }
+      .btn {
+        margin-top: 40px; background: #25d366; color: #052b12; border-radius: 999px;
+        text-align: center; padding: 38px; font-size: 52px; font-weight: 800;
+      }
+      .chips { display: flex; gap: 18px; margin-top: 34px; flex-wrap: wrap; }
+      .chip { padding: 18px 34px; border-radius: 999px; font-size: 36px; font-weight: 700; background: rgba(255,255,255,0.1); }
+      .chip.on { background: var(--red); box-shadow: 0 0 30px rgba(255,42,42,0.6); }
+      .url { font-family: var(--font-mono); font-size: 44px; margin-top: 34px; padding: 30px 36px; border-radius: 26px; background: rgba(255,255,255,0.08); }
+      .url b { color: #4ade80; }
+      .cta { position: absolute; top: 330px; left: 90px; width: 900px; text-align: center; font-size: 64px; font-weight: 700; line-height: 1.25; }
+      .kw {
+        position: absolute; top: 760px; left: 190px; width: 700px; text-align: center;
+        font-size: 150px; font-weight: 800; letter-spacing: 0.04em; padding: 40px 0;
+        background: var(--red); border-radius: 56px; box-shadow: 0 0 80px rgba(255,42,42,0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28" data-width="1080" data-height="1920">
+      <div class="bg"><div class="streak s1"></div><div class="streak s2"></div><div class="dots"></div></div>
+
+      <!-- 1. Google -->
+      <div id="sc1" class="clip scene" data-start="0" data-duration="4" data-track-index="0">
+        <div class="tag">Busca</div>
+        <div class="card">
+          <div class="label">Google</div>
+          <div class="search">barbearia perto de mim</div>
+          <div class="row"><span>Barbearia Concorrente A</span><small>site</small></div>
+          <div class="row"><span>Barbearia Concorrente B</span><small>site</small></div>
+          <div class="row miss"><span>Seu negócio</span><small>não aparece</small></div>
+        </div>
+        <div class="title">Google</div>
+        <div class="sub">Seu cliente procura aqui antes de te chamar no direct.</div>
+      </div>
+
+      <!-- 2. Sem site -->
+      <div id="sc2" class="clip scene" data-start="4" data-duration="4" data-track-index="0">
+        <div class="tag">Só Instagram</div>
+        <div class="card">
+          <div class="label">Presença online</div>
+          <div class="bars">
+            <div class="bar" style="height:35%"></div><div class="bar" style="height:55%"></div>
+            <div class="bar" style="height:40%"></div><div class="bar" style="height:70%"></div>
+            <div class="bar" style="height:50%"></div><div class="bar hot" style="height:95%"></div>
+          </div>
+          <div class="label" style="margin-top:40px">Quem te acha no Google</div>
+          <div class="prog"><i id="p2"></i></div>
+          <div class="pct" id="pct2">0%</div>
+        </div>
+        <div class="title">Sem site</div>
+        <div class="sub">Quem busca não te encontra.</div>
+      </div>
+
+      <!-- 3. Buscas -->
+      <div id="sc3" class="clip scene" data-start="8" data-duration="4" data-track-index="0">
+        <div class="tag">Todo mês</div>
+        <div class="card">
+          <div class="label">Buscas na sua cidade</div>
+          <div class="big" id="n3">0</div>
+          <div class="label" style="margin-top:30px">Exemplo ilustrativo</div>
+          <div class="prog"><i id="p3"></i></div>
+        </div>
+        <div class="title">Buscas</div>
+        <div class="sub">Essas buscas vão direto pro concorrente.</div>
+      </div>
+
+      <!-- 4. Confiança -->
+      <div id="sc4" class="clip scene" data-start="12" data-duration="4" data-track-index="0">
+        <div class="tag">Site oficial</div>
+        <div class="card">
+          <div class="label">Endereço do seu negócio</div>
+          <div class="url"><b>🔒</b> https://seunegocio.com.br</div>
+          <div class="chips">
+            <span class="chip on" id="c4a">Preço</span>
+            <span class="chip on" id="c4b">Horário</span>
+            <span class="chip on" id="c4c">Endereço</span>
+          </div>
+        </div>
+        <div class="title">Confiança</div>
+        <div class="sub">Tudo num link só, com a cara do seu negócio.</div>
+      </div>
+
+      <!-- 5. WhatsApp -->
+      <div id="sc5" class="clip scene" data-start="16" data-duration="4" data-track-index="0">
+        <div class="tag">Entra e sai</div>
+        <div class="card">
+          <div class="label">Contatos hoje</div>
+          <div class="big" id="n5">+0</div>
+          <div class="btn" id="b5">Chamar no WhatsApp</div>
+        </div>
+        <div class="title">WhatsApp</div>
+        <div class="sub">O cliente clica e já agenda.</div>
+      </div>
+
+      <!-- 6. Seu site -->
+      <div id="sc6" class="clip scene" data-start="20" data-duration="4" data-track-index="0">
+        <div class="tag">Prazo</div>
+        <div class="card">
+          <div class="label">Seu site, pronto em</div>
+          <div class="big" id="n6">0 dias</div>
+          <div class="chips">
+            <span class="chip on" id="c6a">Design</span>
+            <span class="chip on" id="c6b">Textos</span>
+            <span class="chip on" id="c6c">No ar</span>
+          </div>
+        </div>
+        <div class="title">Seu site</div>
+        <div class="sub">Eu monto pra você em poucos dias.</div>
+      </div>
+
+      <!-- 7. CTA -->
+      <div id="sc7" class="clip scene" data-start="24" data-duration="4" data-track-index="0">
+        <div class="cta" id="cta7">Quer aparecer no Google?<br />Comenta:</div>
+        <div class="kw" id="kw7">SITE</div>
+        <div class="sub" style="top:1180px">Eu te mando uma proposta no direct.</div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const SCENES = [0, 4, 8, 12, 16, 20, 24];
+
+      // entrada padrão de cada cena: card sobe, título pisca e sobe, legenda aparece
+      SCENES.slice(0, 6).forEach((t, i) => {
+        const id = "#sc" + (i + 1);
+        tl.fromTo(id + " .tag", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, t);
+        tl.fromTo(id + " .card", { opacity: 0, y: 80, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" }, t + 0.1);
+        // cena 1: título já visível no frame 0 (miniatura do reel)
+        if (i === 0) tl.fromTo(id + " .title", { opacity: 1, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, 0);
+        else tl.fromTo(id + " .title", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, t + 0.5);
+        tl.fromTo(id + " .sub", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, t + 1.0);
+        tl.to(id, { opacity: 0, duration: 0.25, ease: "power1.in" }, t + 3.75);
+      });
+
+      // cena 1: resultados entram em sequência
+      tl.fromTo("#sc1 .row", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25, ease: "power2.out" }, 0.7);
+
+      // cena 2: barra e porcentagem ficam em 0%
+      tl.fromTo("#sc2 .bar", { scaleY: 0, transformOrigin: "bottom" }, { scaleY: 1, duration: 0.5, stagger: 0.08, ease: "back.out(1.4)" }, 4.5);
+      tl.to("#p2", { width: "3%", duration: 0.6, ease: "power2.out" }, 5.4);
+
+      // cena 3: contador sobe até 2.791
+      const c3 = { v: 0 };
+      tl.to(c3, { v: 2791, duration: 1.8, ease: "power2.out",
+        onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v).toLocaleString("pt-BR"); } }, 8.5);
+      tl.to("#p3", { width: "100%", duration: 1.8, ease: "power2.out" }, 8.5);
+
+      // cena 4: chips entram
+      tl.fromTo(["#c4a", "#c4b", "#c4c"], { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.2 }, 12.8);
+
+      // cena 5: contador de contatos e botão pulsando
+      const c5 = { v: 0 };
+      tl.to(c5, { v: 12, duration: 1.6, ease: "power1.out",
+        onUpdate: () => { document.getElementById("n5").textContent = "+" + Math.round(c5.v); } }, 16.6);
+      tl.fromTo("#b5", { scale: 1 }, { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 17.2);
+
+      // cena 6: prazo "3 dias" e chips
+      const c6 = { v: 0 };
+      tl.to(c6, { v: 3, duration: 1.0, ease: "none",
+        onUpdate: () => { document.getElementById("n6").textContent = Math.round(c6.v) + " dias"; } }, 20.6);
+      tl.fromTo(["#c6a", "#c6b", "#c6c"], { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.25 }, 21.2);
+
+      // cena 7: CTA
+      tl.fromTo("#cta7", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 24.1);
+      tl.fromTo("#kw7", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 24.6);
+      tl.fromTo("#sc7 .sub", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 25.4);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
