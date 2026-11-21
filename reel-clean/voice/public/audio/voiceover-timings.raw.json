@@ -1,0 +1,327 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 16.54,
+  "words": [
+    {
+      "word": "Perguntas",
+      "key": "perguntas",
+      "start": 0.0,
+      "end": 0.82,
+      "startFrame": 0,
+      "endFrame": 25
+    },
+    {
+      "word": "que",
+      "key": "que",
+      "start": 0.82,
+      "end": 0.96,
+      "startFrame": 25,
+      "endFrame": 29
+    },
+    {
+      "word": "me",
+      "key": "me",
+      "start": 0.96,
+      "end": 1.06,
+      "startFrame": 29,
+      "endFrame": 32
+    },
+    {
+      "word": "fazem.",
+      "key": "fazem",
+      "start": 1.06,
+      "end": 1.46,
+      "startFrame": 32,
+      "endFrame": 44
+    },
+    {
+      "word": "O",
+      "key": "o",
+      "start": 2.22,
+      "end": 2.32,
+      "startFrame": 67,
+      "endFrame": 70
+    },
+    {
+      "word": "que",
+      "key": "que",
+      "start": 2.32,
+      "end": 2.56,
+      "startFrame": 70,
+      "endFrame": 77
+    },
+    {
+      "word": "é",
+      "key": "é",
+      "start": 2.56,
+      "end": 2.74,
+      "startFrame": 77,
+      "endFrame": 82
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 2.74,
+      "end": 2.88,
+      "startFrame": 82,
+      "endFrame": 86
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 2.88,
+      "end": 3.44,
+      "startFrame": 86,
+      "endFrame": 103
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 3.44,
+      "end": 3.58,
+      "startFrame": 103,
+      "endFrame": 107
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 3.58,
+      "end": 3.9,
+      "startFrame": 107,
+      "endFrame": 117
+    },
+    {
+      "word": "I?",
+      "key": "i",
+      "start": 3.9,
+      "end": 4.12,
+      "startFrame": 117,
+      "endFrame": 124
+    },
+    {
+      "word": "Uma",
+      "key": "uma",
+      "start": 4.76,
+      "end": 4.94,
+      "startFrame": 143,
+      "endFrame": 148
+    },
+    {
+      "word": "plataforma",
+      "key": "plataforma",
+      "start": 4.94,
+      "end": 5.58,
+      "startFrame": 148,
+      "endFrame": 167
+    },
+    {
+      "word": "de",
+      "key": "de",
+      "start": 5.58,
+      "end": 5.92,
+      "startFrame": 167,
+      "endFrame": 178
+    },
+    {
+      "word": "prospecção",
+      "key": "prospecção",
+      "start": 5.92,
+      "end": 6.66,
+      "startFrame": 178,
+      "endFrame": 200
+    },
+    {
+      "word": "que",
+      "key": "que",
+      "start": 6.66,
+      "end": 7.02,
+      "startFrame": 200,
+      "endFrame": 211
+    },
+    {
+      "word": "ajuda",
+      "key": "ajuda",
+      "start": 7.02,
+      "end": 7.32,
+      "startFrame": 211,
+      "endFrame": 220
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 7.32,
+      "end": 7.5,
+      "startFrame": 220,
+      "endFrame": 225
+    },
+    {
+      "word": "pesquisar",
+      "key": "pesquisar",
+      "start": 7.5,
+      "end": 7.92,
+      "startFrame": 225,
+      "endFrame": 238
+    },
+    {
+      "word": "empresas",
+      "key": "empresas",
+      "start": 7.92,
+      "end": 8.38,
+      "startFrame": 238,
+      "endFrame": 251
+    },
+    {
+      "word": "por",
+      "key": "por",
+      "start": 8.38,
+      "end": 8.64,
+      "startFrame": 251,
+      "endFrame": 259
+    },
+    {
+      "word": "nicho",
+      "key": "nicho",
+      "start": 8.64,
+      "end": 9.14,
+      "startFrame": 259,
+      "endFrame": 274
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 9.14,
+      "end": 9.18,
+      "startFrame": 274,
+      "endFrame": 275
+    },
+    {
+      "word": "localização",
+      "key": "localização",
+      "start": 9.18,
+      "end": 9.9,
+      "startFrame": 275,
+      "endFrame": 297
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 9.9,
+      "end": 10.48,
+      "startFrame": 297,
+      "endFrame": 314
+    },
+    {
+      "word": "organizar",
+      "key": "organizar",
+      "start": 10.48,
+      "end": 11.0,
+      "startFrame": 314,
+      "endFrame": 330
+    },
+    {
+      "word": "leads.",
+      "key": "leads",
+      "start": 11.0,
+      "end": 11.3,
+      "startFrame": 330,
+      "endFrame": 339
+    },
+    {
+      "word": "Preciso",
+      "key": "preciso",
+      "start": 12.0,
+      "end": 12.46,
+      "startFrame": 360,
+      "endFrame": 374
+    },
+    {
+      "word": "informar",
+      "key": "informar",
+      "start": 12.46,
+      "end": 12.9,
+      "startFrame": 374,
+      "endFrame": 387
+    },
+    {
+      "word": "cartão",
+      "key": "cartão",
+      "start": 12.9,
+      "end": 13.3,
+      "startFrame": 387,
+      "endFrame": 399
+    },
+    {
+      "word": "para",
+      "key": "para",
+      "start": 13.3,
+      "end": 13.44,
+      "startFrame": 399,
+      "endFrame": 403
+    },
+    {
+      "word": "começar?",
+      "key": "começar",
+      "start": 13.44,
+      "end": 13.72,
+      "startFrame": 403,
+      "endFrame": 412
+    },
+    {
+      "word": "Não.",
+      "key": "não",
+      "start": 14.36,
+      "end": 14.74,
+      "startFrame": 431,
+      "endFrame": 442
+    },
+    {
+      "word": "O",
+      "key": "o",
+      "start": 15.14,
+      "end": 15.16,
+      "startFrame": 454,
+      "endFrame": 455
+    },
+    {
+      "word": "plano",
+      "key": "plano",
+      "start": 15.16,
+      "end": 15.34,
+      "startFrame": 455,
+      "endFrame": 460
+    },
+    {
+      "word": "Starter",
+      "key": "starter",
+      "start": 15.34,
+      "end": 15.86,
+      "startFrame": 460,
+      "endFrame": 476
+    },
+    {
+      "word": "é",
+      "key": "é",
+      "start": 15.86,
+      "end": 15.96,
+      "startFrame": 476,
+      "endFrame": 479
+    },
+    {
+      "word": "gratuito.",
+      "key": "gratuito",
+      "start": 15.96,
+      "end": 16.54,
+      "startFrame": 479,
+      "endFrame": 496
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 39,
+    "total": 39
+  }
+}
