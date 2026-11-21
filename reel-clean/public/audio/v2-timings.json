@@ -1,0 +1,296 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 17.52,
+  "words": [
+    {
+      "word": "Planilha",
+      "key": "planilha",
+      "start": 0.0,
+      "end": 0.72,
+      "startFrame": 0,
+      "endFrame": 22
+    },
+    {
+      "word": "bagunçada?",
+      "key": "bagunçada",
+      "start": 0.72,
+      "end": 1.6,
+      "startFrame": 22,
+      "endFrame": 48
+    },
+    {
+      "word": "Nome",
+      "key": "nome",
+      "start": 2.56,
+      "end": 2.7600000000000002,
+      "startFrame": 77,
+      "endFrame": 83
+    },
+    {
+      "word": "perdido,",
+      "key": "perdido",
+      "start": 2.7600000000000002,
+      "end": 3.52,
+      "startFrame": 83,
+      "endFrame": 106
+    },
+    {
+      "word": "telefone",
+      "key": "telefone",
+      "start": 3.62,
+      "end": 4.04,
+      "startFrame": 109,
+      "endFrame": 121
+    },
+    {
+      "word": "sem",
+      "key": "sem",
+      "start": 4.04,
+      "end": 4.24,
+      "startFrame": 121,
+      "endFrame": 127
+    },
+    {
+      "word": "dono,",
+      "key": "dono",
+      "start": 4.24,
+      "end": 4.819999999999999,
+      "startFrame": 127,
+      "endFrame": 145
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 4.9399999999999995,
+      "end": 5.04,
+      "startFrame": 148,
+      "endFrame": 151
+    },
+    {
+      "word": "ninguém",
+      "key": "ninguém",
+      "start": 5.04,
+      "end": 5.319999999999999,
+      "startFrame": 151,
+      "endFrame": 160
+    },
+    {
+      "word": "sabe",
+      "key": "sabe",
+      "start": 5.319999999999999,
+      "end": 5.739999999999999,
+      "startFrame": 160,
+      "endFrame": 172
+    },
+    {
+      "word": "quem",
+      "key": "quem",
+      "start": 5.739999999999999,
+      "end": 5.9799999999999995,
+      "startFrame": 172,
+      "endFrame": 179
+    },
+    {
+      "word": "já",
+      "key": "já",
+      "start": 5.9799999999999995,
+      "end": 6.14,
+      "startFrame": 179,
+      "endFrame": 184
+    },
+    {
+      "word": "foi",
+      "key": "foi",
+      "start": 6.14,
+      "end": 6.26,
+      "startFrame": 184,
+      "endFrame": 188
+    },
+    {
+      "word": "chamado.",
+      "key": "chamado",
+      "start": 6.26,
+      "end": 6.64,
+      "startFrame": 188,
+      "endFrame": 199
+    },
+    {
+      "word": "Agora",
+      "key": "agora",
+      "start": 7.94,
+      "end": 8.299999999999999,
+      "startFrame": 238,
+      "endFrame": 249
+    },
+    {
+      "word": "olha",
+      "key": "olha",
+      "start": 8.299999999999999,
+      "end": 8.94,
+      "startFrame": 249,
+      "endFrame": 268
+    },
+    {
+      "word": "isso.",
+      "key": "isso",
+      "start": 8.94,
+      "end": 9.399999999999999,
+      "startFrame": 268,
+      "endFrame": 282
+    },
+    {
+      "word": "Os",
+      "key": "os",
+      "start": 10.379999999999999,
+      "end": 10.52,
+      "startFrame": 311,
+      "endFrame": 316
+    },
+    {
+      "word": "leads",
+      "key": "leads",
+      "start": 10.52,
+      "end": 10.8,
+      "startFrame": 316,
+      "endFrame": 324
+    },
+    {
+      "word": "ficam",
+      "key": "ficam",
+      "start": 10.8,
+      "end": 11.219999999999999,
+      "startFrame": 324,
+      "endFrame": 337
+    },
+    {
+      "word": "organizados,",
+      "key": "organizados",
+      "start": 11.219999999999999,
+      "end": 11.98,
+      "startFrame": 337,
+      "endFrame": 359
+    },
+    {
+      "word": "com",
+      "key": "com",
+      "start": 12.239999999999998,
+      "end": 12.36,
+      "startFrame": 367,
+      "endFrame": 371
+    },
+    {
+      "word": "nota",
+      "key": "nota",
+      "start": 12.36,
+      "end": 12.68,
+      "startFrame": 371,
+      "endFrame": 380
+    },
+    {
+      "word": "de",
+      "key": "de",
+      "start": 12.68,
+      "end": 12.84,
+      "startFrame": 380,
+      "endFrame": 385
+    },
+    {
+      "word": "potencial,",
+      "key": "potencial",
+      "start": 12.84,
+      "end": 13.379999999999999,
+      "startFrame": 385,
+      "endFrame": 401
+    },
+    {
+      "word": "num",
+      "key": "num",
+      "start": 13.84,
+      "end": 14.0,
+      "startFrame": 415,
+      "endFrame": 420
+    },
+    {
+      "word": "só",
+      "key": "só",
+      "start": 14.0,
+      "end": 14.2,
+      "startFrame": 420,
+      "endFrame": 426
+    },
+    {
+      "word": "lugar.",
+      "key": "lugar",
+      "start": 14.2,
+      "end": 14.48,
+      "startFrame": 426,
+      "endFrame": 434
+    },
+    {
+      "word": "Teste",
+      "key": "teste",
+      "start": 15.58,
+      "end": 15.84,
+      "startFrame": 467,
+      "endFrame": 475
+    },
+    {
+      "word": "grátis",
+      "key": "grátis",
+      "start": 15.84,
+      "end": 16.24,
+      "startFrame": 475,
+      "endFrame": 487
+    },
+    {
+      "word": "na",
+      "key": "na",
+      "start": 16.24,
+      "end": 16.36,
+      "startFrame": 487,
+      "endFrame": 491
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 16.36,
+      "end": 16.919999999999998,
+      "startFrame": 491,
+      "endFrame": 508
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 16.919999999999998,
+      "end": 17.06,
+      "startFrame": 508,
+      "endFrame": 512
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 17.06,
+      "end": 17.419999999999998,
+      "startFrame": 512,
+      "endFrame": 523
+    },
+    {
+      "word": "I.",
+      "key": "i",
+      "start": 17.419999999999998,
+      "end": 17.52,
+      "startFrame": 523,
+      "endFrame": 526
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 35,
+    "total": 35
+  },
+  "pauseInserted": 0.6
+}

@@ -1,0 +1,288 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 21.14,
+  "words": [
+    {
+      "word": "Mito:",
+      "key": "mito",
+      "start": 0.0,
+      "end": 0.64,
+      "startFrame": 0,
+      "endFrame": 19
+    },
+    {
+      "word": "prospectar",
+      "key": "prospectar",
+      "start": 1.54,
+      "end": 2.38,
+      "startFrame": 46,
+      "endFrame": 71
+    },
+    {
+      "word": "é",
+      "key": "é",
+      "start": 2.38,
+      "end": 2.54,
+      "startFrame": 71,
+      "endFrame": 76
+    },
+    {
+      "word": "perder",
+      "key": "perder",
+      "start": 2.54,
+      "end": 2.72,
+      "startFrame": 76,
+      "endFrame": 82
+    },
+    {
+      "word": "tempo.",
+      "key": "tempo",
+      "start": 2.72,
+      "end": 3.14,
+      "startFrame": 82,
+      "endFrame": 94
+    },
+    {
+      "word": "Verdade:",
+      "key": "verdade",
+      "start": 4.34,
+      "end": 4.94,
+      "startFrame": 130,
+      "endFrame": 148
+    },
+    {
+      "word": "perder",
+      "key": "perder",
+      "start": 5.92,
+      "end": 6.26,
+      "startFrame": 178,
+      "endFrame": 188
+    },
+    {
+      "word": "tempo",
+      "key": "tempo",
+      "start": 6.26,
+      "end": 6.76,
+      "startFrame": 188,
+      "endFrame": 203
+    },
+    {
+      "word": "é",
+      "key": "é",
+      "start": 6.76,
+      "end": 7.04,
+      "startFrame": 203,
+      "endFrame": 211
+    },
+    {
+      "word": "prospectar",
+      "key": "prospectar",
+      "start": 7.04,
+      "end": 7.74,
+      "startFrame": 211,
+      "endFrame": 232
+    },
+    {
+      "word": "sem",
+      "key": "sem",
+      "start": 7.74,
+      "end": 8.0,
+      "startFrame": 232,
+      "endFrame": 240
+    },
+    {
+      "word": "organização.",
+      "key": "organização",
+      "start": 8.0,
+      "end": 8.68,
+      "startFrame": 240,
+      "endFrame": 260
+    },
+    {
+      "word": "Escolha",
+      "key": "escolha",
+      "start": 9.98,
+      "end": 10.48,
+      "startFrame": 299,
+      "endFrame": 314
+    },
+    {
+      "word": "o",
+      "key": "o",
+      "start": 10.48,
+      "end": 10.540000000000001,
+      "startFrame": 314,
+      "endFrame": 316
+    },
+    {
+      "word": "nicho,",
+      "key": "nicho",
+      "start": 10.540000000000001,
+      "end": 10.98,
+      "startFrame": 316,
+      "endFrame": 329
+    },
+    {
+      "word": "escolha",
+      "key": "escolha",
+      "start": 11.24,
+      "end": 11.620000000000001,
+      "startFrame": 337,
+      "endFrame": 349
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 11.620000000000001,
+      "end": 11.74,
+      "startFrame": 349,
+      "endFrame": 352
+    },
+    {
+      "word": "cidade,",
+      "key": "cidade",
+      "start": 11.74,
+      "end": 12.16,
+      "startFrame": 352,
+      "endFrame": 365
+    },
+    {
+      "word": "veja",
+      "key": "veja",
+      "start": 12.74,
+      "end": 13.0,
+      "startFrame": 382,
+      "endFrame": 390
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 13.0,
+      "end": 13.08,
+      "startFrame": 390,
+      "endFrame": 392
+    },
+    {
+      "word": "nota",
+      "key": "nota",
+      "start": 13.08,
+      "end": 13.34,
+      "startFrame": 392,
+      "endFrame": 400
+    },
+    {
+      "word": "de",
+      "key": "de",
+      "start": 13.34,
+      "end": 13.52,
+      "startFrame": 400,
+      "endFrame": 406
+    },
+    {
+      "word": "potencial",
+      "key": "potencial",
+      "start": 13.52,
+      "end": 13.98,
+      "startFrame": 406,
+      "endFrame": 419
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 13.98,
+      "end": 14.42,
+      "startFrame": 419,
+      "endFrame": 433
+    },
+    {
+      "word": "comece",
+      "key": "comece",
+      "start": 14.42,
+      "end": 14.96,
+      "startFrame": 433,
+      "endFrame": 449
+    },
+    {
+      "word": "pelos",
+      "key": "pelos",
+      "start": 14.96,
+      "end": 15.26,
+      "startFrame": 449,
+      "endFrame": 458
+    },
+    {
+      "word": "melhores.",
+      "key": "melhores",
+      "start": 15.26,
+      "end": 15.68,
+      "startFrame": 458,
+      "endFrame": 470
+    },
+    {
+      "word": "Prospecção",
+      "key": "prospecção",
+      "start": 17.22,
+      "end": 17.96,
+      "startFrame": 517,
+      "endFrame": 539
+    },
+    {
+      "word": "com",
+      "key": "com",
+      "start": 17.96,
+      "end": 18.259999999999998,
+      "startFrame": 539,
+      "endFrame": 548
+    },
+    {
+      "word": "método.",
+      "key": "método",
+      "start": 18.259999999999998,
+      "end": 18.78,
+      "startFrame": 548,
+      "endFrame": 563
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 19.78,
+      "end": 20.48,
+      "startFrame": 593,
+      "endFrame": 614
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 20.48,
+      "end": 20.62,
+      "startFrame": 614,
+      "endFrame": 619
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 20.62,
+      "end": 21.020000000000003,
+      "startFrame": 619,
+      "endFrame": 631
+    },
+    {
+      "word": "I.",
+      "key": "i",
+      "start": 21.020000000000003,
+      "end": 21.14,
+      "startFrame": 631,
+      "endFrame": 634
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 34,
+    "total": 34
+  },
+  "pauseInserted": 0.6
+}
