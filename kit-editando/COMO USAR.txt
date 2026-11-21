@@ -1,0 +1,51 @@
+KIT EDITANDO COM O CLAUDE
+Série "Editando com o Claude", de @gabeberaldo. É de graça. Pode compartilhar.
+
+
+O QUE TEM AQUI
+
+- CLAUDE.md: as instruções que o Claude lê sozinho toda vez que você abre a pasta.
+- 4 pastas: brutos, referencias, marca e finalizados.
+
+
+ANTES DE COMEÇAR
+
+Você precisa do app do Claude no computador (claude.com/download), com a aba Code.
+A aba Code vem a partir do plano Pro. Está tudo no episódio 1.
+
+
+PASSO A PASSO
+
+1. Descompacte o kit.
+   Já tem a pasta do episódio 1? Copie só o CLAUDE.md para dentro dela, junto das pastas.
+   Ainda não tem? Use esta pasta inteira como a sua pasta de vídeos.
+
+2. Abra o app do Claude, vá na aba Code e escolha essa pasta.
+
+3. Escreva:
+   leia o CLAUDE.md e instala as ferramentas de edição pra mim
+
+4. Quando ele pedir permissão para pesquisar ou instalar alguma coisa, leia o que ele explicou e clique em permitir.
+
+5. Ele avisa quando terminar.
+
+
+DEPOIS
+
+- brutos: jogue aqui o vídeo que você gravou.
+- referencias: salve vídeos e imagens de que você gosta. O Pinterest ajuda muito.
+- marca: coloque seu logo, suas cores e o estilo de texto que você quer.
+
+Aí peça:
+   analisa a pasta marca e as referências e monta a minha identidade visual
+
+
+O SEGREDO
+
+Dê liberdade para o seu Claude pesquisar e conversar com você.
+
+Teve dificuldade com o kit? Nem precisa dele. É só pedir:
+   pesquisa as ferramentas de edição de vídeo e instala pra mim
+
+
+No próximo episódio, ele edita o vídeo inteiro. Me segue pra não perder: @gabeberaldo

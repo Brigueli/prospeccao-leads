@@ -1,0 +1,280 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 14.912999999999998,
+  "words": [
+    {
+      "word": "Mais",
+      "key": "mais",
+      "start": 0.137,
+      "end": 0.684,
+      "startFrame": 4,
+      "endFrame": 21
+    },
+    {
+      "word": "de",
+      "key": "de",
+      "start": 0.82,
+      "end": 1.367,
+      "startFrame": 25,
+      "endFrame": 41
+    },
+    {
+      "word": "trezentos",
+      "key": "trezentos",
+      "start": 1.504,
+      "end": 2.051,
+      "startFrame": 45,
+      "endFrame": 62
+    },
+    {
+      "word": "prompts,",
+      "key": "prompts",
+      "start": 2.187,
+      "end": 2.734,
+      "startFrame": 66,
+      "endFrame": 82
+    },
+    {
+      "word": "skills",
+      "key": "skills",
+      "start": 2.871,
+      "end": 3.418,
+      "startFrame": 86,
+      "endFrame": 103
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 3.554,
+      "end": 4.101,
+      "startFrame": 107,
+      "endFrame": 123
+    },
+    {
+      "word": "agents",
+      "key": "agents",
+      "start": 4.238,
+      "end": 4.785,
+      "startFrame": 127,
+      "endFrame": 144
+    },
+    {
+      "word": "num",
+      "key": "num",
+      "start": 4.921,
+      "end": 5.468,
+      "startFrame": 148,
+      "endFrame": 164
+    },
+    {
+      "word": "lugar",
+      "key": "lugar",
+      "start": 5.605,
+      "end": 6.152,
+      "startFrame": 168,
+      "endFrame": 185
+    },
+    {
+      "word": "só.",
+      "key": "só",
+      "start": 6.288,
+      "end": 6.835,
+      "startFrame": 189,
+      "endFrame": 205
+    },
+    {
+      "word": "E",
+      "key": "e",
+      "start": 7.572,
+      "end": 8.119,
+      "startFrame": 227,
+      "endFrame": 244
+    },
+    {
+      "word": "tem",
+      "key": "tem",
+      "start": 8.256,
+      "end": 8.802,
+      "startFrame": 248,
+      "endFrame": 264
+    },
+    {
+      "word": "o",
+      "key": "o",
+      "start": 8.939,
+      "end": 9.485999999999999,
+      "startFrame": 268,
+      "endFrame": 285
+    },
+    {
+      "word": "criador",
+      "key": "criador",
+      "start": 9.623,
+      "end": 10.169,
+      "startFrame": 289,
+      "endFrame": 305
+    },
+    {
+      "word": "de",
+      "key": "de",
+      "start": 10.306,
+      "end": 10.853,
+      "startFrame": 309,
+      "endFrame": 326
+    },
+    {
+      "word": "prompt",
+      "key": "prompt",
+      "start": 10.99,
+      "end": 11.536,
+      "startFrame": 330,
+      "endFrame": 346
+    },
+    {
+      "word": "com",
+      "key": "com",
+      "start": 12.219999999999999,
+      "end": 12.84,
+      "startFrame": 367,
+      "endFrame": 385
+    },
+    {
+      "word": "I",
+      "key": "i",
+      "start": 12.856,
+      "end": 12.92,
+      "startFrame": 386,
+      "endFrame": 388
+    },
+    {
+      "word": "A,",
+      "key": "a",
+      "start": 12.936,
+      "end": 13.0,
+      "startFrame": 388,
+      "endFrame": 390
+    },
+    {
+      "word": "para",
+      "key": "para",
+      "start": 13.016,
+      "end": 13.08,
+      "startFrame": 390,
+      "endFrame": 392
+    },
+    {
+      "word": "criar",
+      "key": "criar",
+      "start": 13.096,
+      "end": 13.16,
+      "startFrame": 393,
+      "endFrame": 395
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 13.176,
+      "end": 13.24,
+      "startFrame": 395,
+      "endFrame": 397
+    },
+    {
+      "word": "melhorar",
+      "key": "melhorar",
+      "start": 13.256,
+      "end": 13.32,
+      "startFrame": 398,
+      "endFrame": 400
+    },
+    {
+      "word": "os",
+      "key": "os",
+      "start": 13.336,
+      "end": 13.4,
+      "startFrame": 400,
+      "endFrame": 402
+    },
+    {
+      "word": "seus.",
+      "key": "seus",
+      "start": 13.416,
+      "end": 13.48,
+      "startFrame": 402,
+      "endFrame": 404
+    },
+    {
+      "word": "Tudo",
+      "key": "tudo",
+      "start": 14.096,
+      "end": 14.16,
+      "startFrame": 423,
+      "endFrame": 425
+    },
+    {
+      "word": "na",
+      "key": "na",
+      "start": 14.176,
+      "end": 14.239999999999998,
+      "startFrame": 425,
+      "endFrame": 427
+    },
+    {
+      "word": "biblioteca",
+      "key": "biblioteca",
+      "start": 14.255999999999998,
+      "end": 14.319999999999999,
+      "startFrame": 428,
+      "endFrame": 430
+    },
+    {
+      "word": "da",
+      "key": "da",
+      "start": 14.335999999999999,
+      "end": 14.399999999999999,
+      "startFrame": 430,
+      "endFrame": 432
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 14.415999999999999,
+      "end": 14.479999999999999,
+      "startFrame": 432,
+      "endFrame": 434
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 14.5,
+      "end": 14.58,
+      "startFrame": 435,
+      "endFrame": 437
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 14.607,
+      "end": 14.713,
+      "startFrame": 438,
+      "endFrame": 441
+    },
+    {
+      "word": "I.",
+      "key": "i",
+      "start": 14.753,
+      "end": 14.912999999999998,
+      "startFrame": 443,
+      "endFrame": 447
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 1,
+    "total": 33
+  },
+  "pauseInserted": 0.6
+}

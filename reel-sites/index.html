@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      /* ===== PALETA: troque só aqui (acento em RGB para os brilhos) ===== */
+      :root {
+        --accent: #19d3e6;
+        --accent-rgb: 25, 211, 230;
+        --accent-deep: #1e6fe0;
+        --on-accent: #04121f;
+        --alert: #ff4d5e;
+        --alert-rgb: 255, 77, 94;
+        --ground: #060d1c;
+        --ink: #ffffff;
+        --dim: #8da2c0;
+        --ok: #25d366;
+        --glass: rgba(13, 26, 48, 0.9);
+        --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+        --font-mono: "JetBrains Mono", "Courier New", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); font-family: var(--font-display); color: var(--ink); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+      /* ===== fundo vivo ===== */
+      .bg { position: absolute; inset: 0; z-index: 0; }
+      .streak { position: absolute; width: 1900px; height: 230px; background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.5), transparent); filter: blur(42px); transform: rotate(-35deg); }
+      .s1 { left: -300px; top: 250px; } .s2 { left: -250px; top: 1350px; opacity: .8; } .s3 { left: 200px; top: 700px; opacity: .35; height: 120px; }
+      .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.035) 2px, transparent 2px); background-size: 90px 90px; }
+      .dots { position: absolute; left: 40px; top: 90px; width: 240px; height: 180px; background-image: radial-gradient(rgba(255,255,255,0.25) 2px, transparent 2px); background-size: 26px 26px; }
+      .ptc { position: absolute; border-radius: 50%; background: rgba(var(--accent-rgb), 0.8); box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.9); }
+
+      /* barra de progresso do reel */
+      #topbar { position: absolute; z-index: 20; top: 54px; left: 60px; width: 960px; height: 10px; border-radius: 999px; background: rgba(255,255,255,0.14); overflow: hidden; }
+      #topfill { height: 100%; width: 0; background: var(--accent); box-shadow: 0 0 20px rgba(var(--accent-rgb),1); border-radius: 999px; }
+
+      /* wipe entre cenas */
+      #wipe { position: absolute; z-index: 15; top: -200px; left: -1500px; width: 1300px; height: 2400px; background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb),0.9) 50%, transparent); transform: skewX(-18deg); filter: blur(10px); }
+
+      .clip { position: absolute; inset: 0; z-index: 1; }
+      .scene > * { position: absolute; }
+
+      .num { top: 98px; left: 70px; font-family: var(--font-mono); font-size: 30px; letter-spacing: .15em; color: var(--dim); }
+      .tag { top: 150px; left: 70px; font-family: var(--font-mono); font-size: 32px; letter-spacing: .18em; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 12px 36px; text-transform: uppercase; box-shadow: 0 0 24px rgba(var(--accent-rgb),.35); }
+      .float { font-size: 96px; filter: drop-shadow(0 0 24px rgba(var(--accent-rgb),.7)); }
+      .card { top: 270px; left: 60px; width: 840px; background: var(--glass); border: 2px solid rgba(255,255,255,.09); border-radius: 48px; padding: 44px 48px; box-shadow: 0 30px 80px rgba(0,0,0,.65), inset 0 2px 0 rgba(255,255,255,.07), 0 0 60px rgba(var(--accent-rgb),.15); }
+      .title { top: 1130px; left: 0; width: 100%; text-align: center; font-size: 180px; font-weight: 800; letter-spacing: -.05em; color: #fff; text-shadow: 0 0 30px rgba(var(--accent-rgb),.95), 0 0 90px rgba(var(--accent-rgb),.6); white-space: nowrap; }
+      .sub { top: 1370px; left: 0; width: 100%; text-align: center; font-size: 54px; font-weight: 600; color: #ececec; padding: 0 130px; line-height: 1.2; }
+
+      .label { font-family: var(--font-mono); font-size: 28px; letter-spacing: .12em; color: var(--dim); text-transform: uppercase; }
+      .big { font-size: 140px; font-weight: 800; letter-spacing: -.04em; line-height: 1.05; margin-top: 12px; }
+      .search { background: #fff; color: #111; border-radius: 999px; padding: 26px 40px; font-size: 42px; font-weight: 600; margin-top: 24px; display: flex; align-items: center; gap: 16px; height: 96px; }
+      .caret { display: inline-block; width: 4px; height: 48px; background: #111; }
+      .row { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding: 22px 28px; border-radius: 24px; background: rgba(255,255,255,.07); font-size: 38px; font-weight: 600; }
+      .row small { font-family: var(--font-mono); font-size: 26px; color: var(--dim); }
+      .row.miss { background: rgba(var(--accent-rgb),.16); color: var(--accent); border: 2px dashed var(--accent); }
+      .bars { display: flex; align-items: flex-end; gap: 14px; height: 170px; margin-top: 24px; }
+      .bar { flex: 1; border-radius: 14px; background: rgba(255,255,255,.13); }
+      .bar.hot { background: linear-gradient(#35e0f0, var(--accent-deep)); box-shadow: 0 0 30px rgba(var(--accent-rgb),.7); }
+      .prog { height: 30px; border-radius: 999px; background: rgba(255,255,255,.1); margin-top: 22px; overflow: hidden; }
+      .prog i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--accent-deep), var(--accent)); box-shadow: 0 0 24px rgba(var(--accent-rgb),.9); }
+      .pct { font-size: 110px; font-weight: 800; color: var(--accent); text-shadow: 0 0 30px rgba(var(--accent-rgb),.6); }
+      .badge { position: absolute !important; top: -26px; right: 30px; background: var(--accent); color: var(--on-accent); font-weight: 800; font-size: 30px; padding: 12px 26px; border-radius: 999px; box-shadow: 0 0 30px rgba(var(--accent-rgb),.8); }
+      .chips { display: flex; gap: 16px; margin-top: 26px; flex-wrap: wrap; }
+      .chip { padding: 16px 30px; border-radius: 999px; font-size: 34px; font-weight: 700; background: rgba(255,255,255,.1); }
+      .chip.on { color: var(--on-accent); background: var(--accent); box-shadow: 0 0 28px rgba(var(--accent-rgb),.6); }
+
+      /* navegador */
+      .browser { margin-top: 20px; border-radius: 28px; overflow: hidden; background: #121212; border: 2px solid rgba(255,255,255,.12); }
+      .bhead { display: flex; align-items: center; gap: 12px; padding: 20px 24px; background: #1d1d1d; }
+      .dot { width: 18px; height: 18px; border-radius: 50%; background: #444; } .dot:nth-child(1){background:#ff5f57} .dot:nth-child(2){background:#febc2e} .dot:nth-child(3){background:#28c840}
+      .url { flex: 1; margin-left: 12px; font-family: var(--font-mono); font-size: 28px; background: #0c0c0c; border-radius: 999px; padding: 12px 26px; }
+      .url b { color: #4ade80; }
+      .bbody { padding: 26px; }
+      .blk { border-radius: 18px; background: rgba(255,255,255,.1); }
+      .stars { font-size: 52px; letter-spacing: 6px; margin-top: 20px; }
+
+      /* whatsapp */
+      .chat { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+      .bub { max-width: 600px; padding: 16px 28px; border-radius: 32px; font-size: 38px; font-weight: 600; line-height: 1.2; }
+      .bub.in { background: #2a2a2a; align-self: flex-start; border-bottom-left-radius: 8px; }
+      .bub.out { background: #075e54; align-self: flex-end; border-bottom-right-radius: 8px; }
+      .bub small { display: block; font-size: 28px; opacity: .6; margin-top: 8px; text-align: right; }
+      .notif { background: var(--ok); color: #052b12; font-weight: 800; font-size: 38px; padding: 14px 30px; border-radius: 999px; display: inline-block; margin-top: 18px; }
+
+      /* checklist */
+      .step { display: flex; align-items: center; gap: 24px; margin-top: 18px; padding: 22px 28px; border-radius: 24px; background: rgba(255,255,255,.07); font-size: 40px; font-weight: 700; }
+      .ck { width: 56px; height: 56px; border-radius: 50%; border: 4px solid var(--dim); display: flex; align-items: center; justify-content: center; font-size: 34px; color: transparent; }
+      .ck.done { background: var(--ok); border-color: var(--ok); color: #052b12; }
+      .days { display: flex; gap: 16px; margin-top: 22px; }
+      .day { flex: 1; text-align: center; padding: 20px 0; border-radius: 20px; background: rgba(255,255,255,.08); font-family: var(--font-mono); font-size: 28px; color: var(--dim); }
+      .day b { display: block; font-size: 56px; color: #fff; font-family: var(--font-display); }
+      .day.hot { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 30px rgba(var(--accent-rgb),.7); }
+
+      /* cta */
+      .cta { top: 300px; left: 60px; width: 840px; text-align: center; font-size: 66px; font-weight: 800; line-height: 1.2; }
+      .kw { top: 640px; left: 60px; width: 840px; text-align: center; font-size: 104px; font-weight: 800; letter-spacing: .04em; padding: 44px 0; color: var(--on-accent); background: linear-gradient(90deg, var(--accent), #35a8ff); border-radius: 60px; box-shadow: 0 0 90px rgba(var(--accent-rgb),.85); }
+      .arrow { top: 960px; left: 0; width: 960px; text-align: center; font-size: 150px; }
+      .site7 { top: 1340px; left: 110px; width: 740px; text-align: center; font-family: var(--font-mono); font-size: 44px; font-weight: 700; color: var(--accent); border: 3px solid var(--accent); border-radius: 999px; padding: 24px 0; background: rgba(var(--accent-rgb),.1); box-shadow: 0 0 40px rgba(var(--accent-rgb),.4); }
+      .cf { position: absolute; width: 18px; height: 34px; border-radius: 4px; z-index: 3; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28" data-width="1080" data-height="1920">
+      <div class="bg"><div class="grid"></div><div class="streak s1"></div><div class="streak s2"></div><div class="streak s3"></div><div class="dots"></div><div id="ptcs"></div></div>
+      <div id="topbar"><div id="topfill"></div></div>
+      <div id="wipe" data-layout-allow-occlusion></div>
+
+      <!-- ============ 1. GOOGLE ============ -->
+      <div id="sc1" class="clip scene" data-start="0" data-duration="4" data-track-index="0">
+        <div class="num">01/07</div><div class="tag">Prospecção</div>
+        <div class="float f1" style="left:730px;top:130px">🔎</div>
+        <div class="card" id="card1">
+          <div class="label">Nova prospecção</div>
+          <div class="search"><span>🔎</span><span id="typed"></span><span class="caret" id="caret1"></span></div>
+          <div class="row r1"><span>💈 Barbearia do João</span><small>sem site</small></div>
+          <div class="row r1"><span>💈 Studio Premium</span><small>sem site</small></div>
+          <div class="row miss" id="miss1"><span>🎯 +47 leads encontrados</span><small>WhatsApp ✓</small></div>
+        </div>
+        <div class="title">Encontre</div>
+        <div class="sub">Empresas por nicho e cidade, em segundos.</div>
+      </div>
+
+      <!-- ============ 2. SEM SITE ============ -->
+      <div id="sc2" class="clip scene" data-start="4" data-duration="4" data-track-index="0">
+        <div class="num">02/07</div><div class="tag">Filtros</div>
+        <div class="float f2" style="left:730px;top:130px">📱</div>
+        <div class="card" id="card2">
+          <div class="badge" id="warn2">✅ QUALIFICADOS</div>
+          <div class="label">Leads por filtro</div>
+          <div class="bars">
+            <div class="bar" style="height:35%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:40%"></div>
+            <div class="bar" style="height:70%"></div><div class="bar" style="height:50%"></div><div class="bar hot" style="height:95%"></div>
+          </div>
+          <div class="label" style="margin-top:30px">Com WhatsApp e sem site</div>
+          <div class="prog"><i id="p2"></i></div>
+          <div class="pct" id="pct2">87%</div>
+        </div>
+        <div class="title">Filtre</div>
+        <div class="sub">Só quem tem WhatsApp e ainda não tem site.</div>
+      </div>
+
+      <!-- ============ 3. BUSCAS ============ -->
+      <div id="sc3" class="clip scene" data-start="8" data-duration="4" data-track-index="0">
+        <div class="num">03/07</div><div class="tag">Sua lista</div>
+        <div class="float f3" style="left:730px;top:130px">📍</div>
+        <div class="card" id="card3">
+          <div class="label">Leads encontrados</div>
+          <div class="big" id="n3">0</div>
+          <div class="label" style="margin-top:14px">Exemplo ilustrativo</div>
+          <div class="prog"><i id="p3"></i></div>
+          <div class="chips" style="margin-top:30px">
+            <span class="chip pin" id="pin1">📍 Barbearias</span><span class="chip pin" id="pin2">📍 Salões</span><span class="chip pin" id="pin3">📍 Pet shops</span>
+          </div>
+          <div class="row" id="rowc3" style="margin-top:26px"><span>📂 Organizados em planilha</span><small>pronto</small></div>
+        </div>
+        <div class="title">Leads</div>
+        <div class="sub">Tudo organizado, pronto pra abordar.</div>
+      </div>
+
+      <!-- ============ 4. CONFIANÇA ============ -->
+      <div id="sc4" class="clip scene" data-start="12" data-duration="4" data-track-index="0">
+        <div class="num">04/07</div><div class="tag">Ficha do lead</div>
+        <div class="float f4" style="left:730px;top:130px">📇</div>
+        <div class="card" id="card4">
+          <div class="label">Contato do lead</div>
+          <div class="browser" id="brw">
+            <div class="bhead"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url"><b>🔒</b> brigueli-ai.online</span></div>
+            <div class="bbody">
+              <div class="blk b4" style="height:30px;width:55%"></div>
+              <div class="blk b4" style="height:150px;margin-top:18px;background:linear-gradient(90deg,rgba(var(--accent-rgb),.55),rgba(255,255,255,.08))"></div>
+              <div style="display:flex;gap:14px;margin-top:18px"><div class="blk b4" style="height:86px;flex:1"></div><div class="blk b4" style="height:86px;flex:1"></div><div class="blk b4" style="height:86px;flex:1"></div></div>
+              <div class="stars" id="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip on c4">Telefone</span><span class="chip on c4">WhatsApp</span><span class="chip on c4">Endereço</span>
+          </div>
+        </div>
+        <div class="title">Contato</div>
+        <div class="sub">Número e link do WhatsApp prontos pra usar.</div>
+      </div>
+
+      <!-- ============ 5. WHATSAPP ============ -->
+      <div id="sc5" class="clip scene" data-start="16" data-duration="4" data-track-index="0">
+        <div class="num">05/07</div><div class="tag">Conversa</div>
+        <div class="float f5" style="left:730px;top:130px">💬</div>
+        <div class="card" id="card5">
+          <div class="label">Conversas iniciadas</div>
+          <div class="big" id="n5" style="font-size:110px">+0</div>
+          <div class="chat">
+            <div class="bub in" id="bb1">Oi! Vi sua mensagem, como funciona? 😃<small>14:02</small></div>
+            <div class="bub out" id="bb2">Te mostro agora! Posso ligar? ✅<small>14:02 ✔✔</small></div>
+            <div class="bub in" id="bb3">Pode sim! 🙌<small>14:03</small></div>
+          </div>
+          <div class="notif" id="nt5">💬 Nova mensagem</div>
+        </div>
+        <div class="title">WhatsApp</div>
+        <div class="sub">Chame direto e comece a vender.</div>
+      </div>
+
+      <!-- ============ 6. SEU SITE ============ -->
+      <div id="sc6" class="clip scene" data-start="20" data-duration="4" data-track-index="0">
+        <div class="num">06/07</div><div class="tag">Rotina</div>
+        <div class="float f6" style="left:730px;top:130px">🚀</div>
+        <div class="card" id="card6">
+          <div class="label">Prospecção em</div>
+          <div class="big" id="n6" style="font-size:110px">0 passos</div>
+          <div class="days"><div class="day" id="d1">PASSO<b>1</b></div><div class="day" id="d2">PASSO<b>2</b></div><div class="day" id="d3">PASSO<b>3</b></div></div>
+          <div class="step s6"><span class="ck" id="k1">✓</span>Encontre empresas</div>
+          <div class="step s6"><span class="ck" id="k2">✓</span>Chame no WhatsApp</div>
+          <div class="step s6"><span class="ck" id="k3">✓</span>Feche a venda</div>
+        </div>
+        <div class="title">Vendas</div>
+        <div class="sub">Mais clientes, menos tempo procurando.</div>
+      </div>
+
+      <!-- ============ 7. CTA ============ -->
+      <div id="sc7" class="clip scene" data-start="24" data-duration="4" data-track-index="0">
+        <div class="num">07/07</div>
+        <div class="cta" id="cta7">Quer encontrar clientes<br />sem perder tempo?</div>
+        <div class="kw" id="kw7">TESTE GRÁTIS</div>
+        <div class="arrow" id="arr7">👇</div>
+        <div class="sub" style="top:1180px" id="sub7">Acesse o link e comece a prospectar.</div>
+        <div class="site7" id="site7">🌐 brigueli-ai.online</div>
+      </div>
+
+      <!-- ============ ÁUDIO ============ -->
+      <audio id="a1" src="assets/music.wav" data-start="0" data-duration="28" data-volume="0.45" data-fade-out="1.5"></audio>
+      <!-- whoosh de cada cena -->
+      <audio id="a2" src="assets/whoosh.wav" data-start="0" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a3" src="assets/whoosh.wav" data-start="3.75" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a4" src="assets/whoosh.wav" data-start="7.75" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a5" src="assets/whoosh.wav" data-start="11.75" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a6" src="assets/whoosh.wav" data-start="15.75" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a7" src="assets/whoosh.wav" data-start="19.75" data-duration="0.7" data-volume="0.5"></audio>
+      <audio id="a8" src="assets/whoosh.wav" data-start="23.75" data-duration="0.7" data-volume="0.5"></audio>
+      <!-- impacto do título -->
+      <audio id="a9" src="assets/impact.wav" data-start="0.45" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a10" src="assets/impact.wav" data-start="4.95" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a11" src="assets/impact.wav" data-start="8.95" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a12" src="assets/impact.wav" data-start="12.95" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a13" src="assets/impact.wav" data-start="16.95" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a14" src="assets/impact.wav" data-start="20.95" data-duration="0.8" data-volume="0.55"></audio>
+      <audio id="a15" src="assets/impact.wav" data-start="24.6" data-duration="0.8" data-volume="0.7"></audio>
+      <!-- cena 1: digitação + resultados -->
+      <audio id="a16" src="assets/tick.wav" data-start="0.55" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a17" src="assets/tick.wav" data-start="0.7" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a18" src="assets/tick.wav" data-start="0.85" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a19" src="assets/tick.wav" data-start="1.0" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a20" src="assets/tick.wav" data-start="1.15" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a21" src="assets/tick.wav" data-start="1.3" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a22" src="assets/pop.wav" data-start="1.7" data-duration="0.25" data-volume="0.6"></audio>
+      <audio id="a23" src="assets/pop.wav" data-start="1.95" data-duration="0.25" data-volume="0.6"></audio>
+      <audio id="a24" src="assets/pop.wav" data-start="2.3" data-duration="0.25" data-volume="0.8"></audio>
+      <!-- cena 2 -->
+      <audio id="a25" src="assets/pop.wav" data-start="4.6" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a26" src="assets/pop.wav" data-start="4.7" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a27" src="assets/pop.wav" data-start="4.8" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a28" src="assets/pop.wav" data-start="4.9" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a29" src="assets/pop.wav" data-start="5.0" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a30" src="assets/pop.wav" data-start="5.1" data-duration="0.25" data-volume="0.7"></audio>
+      <audio id="a31" src="assets/ding.wav" data-start="5.6" data-duration="1.0" data-volume="0.4"></audio>
+      <!-- cena 3: contador + pins -->
+      <audio id="a32" src="assets/tick.wav" data-start="8.6" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a33" src="assets/tick.wav" data-start="8.8" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a34" src="assets/tick.wav" data-start="9.0" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a35" src="assets/tick.wav" data-start="9.2" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a36" src="assets/tick.wav" data-start="9.4" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a37" src="assets/tick.wav" data-start="9.6" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a38" src="assets/pop.wav" data-start="9.3" data-duration="0.25" data-volume="0.6"></audio>
+      <audio id="a39" src="assets/pop.wav" data-start="9.55" data-duration="0.25" data-volume="0.6"></audio>
+      <audio id="a40" src="assets/pop.wav" data-start="9.8" data-duration="0.25" data-volume="0.6"></audio>
+      <audio id="a41" src="assets/pop.wav" data-start="10.4" data-duration="0.25" data-volume="0.8"></audio>
+      <!-- cena 4 -->
+      <audio id="a42" src="assets/pop.wav" data-start="12.5" data-duration="0.25" data-volume="0.7"></audio>
+      <audio id="a43" src="assets/pop.wav" data-start="12.9" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a44" src="assets/pop.wav" data-start="13.05" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a45" src="assets/pop.wav" data-start="13.2" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a46" src="assets/tick.wav" data-start="13.45" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a47" src="assets/tick.wav" data-start="13.55" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a48" src="assets/tick.wav" data-start="13.65" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a49" src="assets/tick.wav" data-start="13.75" data-duration="0.06" data-volume="0.5"></audio>
+      <audio id="a50" src="assets/ding.wav" data-start="13.85" data-duration="1.0" data-volume="0.5"></audio>
+      <audio id="a51" src="assets/pop.wav" data-start="14.3" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a52" src="assets/pop.wav" data-start="14.5" data-duration="0.25" data-volume="0.5"></audio>
+      <audio id="a53" src="assets/pop.wav" data-start="14.7" data-duration="0.25" data-volume="0.5"></audio>
+      <!-- cena 5: mensagens -->
+      <audio id="a54" src="assets/pop.wav" data-start="16.7" data-duration="0.25" data-volume="0.7"></audio>
+      <audio id="a55" src="assets/pop.wav" data-start="17.4" data-duration="0.25" data-volume="0.7"></audio>
+      <audio id="a56" src="assets/pop.wav" data-start="18.1" data-duration="0.25" data-volume="0.7"></audio>
+      <audio id="a57" src="assets/ding.wav" data-start="18.9" data-duration="1.0" data-volume="0.55"></audio>
+      <!-- cena 6: checks -->
+      <audio id="a58" src="assets/ding.wav" data-start="20.8" data-duration="1.0" data-volume="0.45"></audio>
+      <audio id="a59" src="assets/ding.wav" data-start="21.5" data-duration="1.0" data-volume="0.5"></audio>
+      <audio id="a60" src="assets/ding.wav" data-start="22.2" data-duration="1.0" data-volume="0.55"></audio>
+      <!-- cena 7 -->
+      <audio id="a61" src="assets/ding.wav" data-start="25.0" data-duration="1.0" data-volume="0.6"></audio>
+      <audio id="a62" src="assets/pop.wav" data-start="25.6" data-duration="0.25" data-volume="0.7"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const SC = [0, 4, 8, 12, 16, 20, 24];
+
+      /* ----- partículas vermelhas flutuando (posições calculadas, sem aleatório) ----- */
+      const box = document.getElementById("ptcs");
+      const P = [];
+      for (let i = 0; i < 26; i++) {
+        const d = document.createElement("div");
+        d.className = "ptc";
+        const s = 6 + ((i * 7) % 9);
+        d.style.cssText = `width:${s}px;height:${s}px;left:${(i * 197) % 1040}px;top:${(i * 331) % 1860}px;opacity:.${3 + (i % 6)}`;
+        box.appendChild(d); P.push(d);
+        tl.to(d, { y: -140 - (i % 5) * 60, x: ((i % 2) ? 40 : -40), duration: 28, ease: "none" }, 0);
+      }
+      gsap.set("#ptcs", { opacity: 1 });
+
+      /* ----- fundo respira, faixas deslizam ----- */
+      tl.to(".s1", { x: 160, duration: 28, ease: "none" }, 0);
+      tl.to(".s2", { x: -180, duration: 28, ease: "none" }, 0);
+      tl.to(".s3", { x: 260, y: 160, duration: 28, ease: "none" }, 0);
+      tl.to(".grid", { y: 180, duration: 28, ease: "none" }, 0);
+      tl.to("#topfill", { width: "100%", duration: 28, ease: "none" }, 0);
+
+      /* ----- entrada/saída comum de cada cena + wipe vermelho entre elas ----- */
+      SC.slice(0, 6).forEach((t, i) => {
+        const id = "#sc" + (i + 1);
+        tl.fromTo(id + " .num", { opacity: 0 }, { opacity: 1, duration: 0.3 }, t + 0.05);
+        tl.fromTo(id + " .tag", { opacity: 0, x: -60, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, t + 0.05);
+        tl.fromTo(id + " .float", { opacity: 0, scale: 0, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.4)" }, t + 0.2);
+        tl.to(id + " .float", { y: -26, rotation: 10, duration: 0.9, yoyo: true, repeat: 3, ease: "sine.inOut" }, t + 0.8);
+        tl.fromTo(id + " .card", { opacity: 0, y: 120, scale: 0.94, rotateX: 12 }, { opacity: 1, y: 0, scale: 1, rotateX: 0, duration: 0.6, ease: "power3.out" }, t + 0.1);
+        tl.to(id + " .card", { y: -14, duration: 1.6, yoyo: true, repeat: 1, ease: "sine.inOut" }, t + 0.8);
+        // título: entra com zoom, estoura e dá um shake curto
+        if (i === 0) tl.fromTo(id + " .title", { opacity: 1, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, 0);
+        else tl.fromTo(id + " .title", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, t + 0.5);
+        tl.fromTo(id + " .title", { x: -12 }, { x: 0, duration: 0.3, ease: "elastic.out(1,0.3)" }, t + 0.95);
+        tl.fromTo(id + " .sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, t + 1.1);
+        tl.to(id, { opacity: 0, duration: 0.25, ease: "power1.in" }, t + 3.75);
+        tl.fromTo("#wipe", { x: 0 }, { x: 3000, duration: 0.7, ease: "power2.inOut" }, t + 3.65);
+      });
+
+      /* ===== CENA 1: digita a busca, resultados caem, "seu negócio" some ===== */
+      const typed = { n: 0 }, TXT = "barbearia em Campinas";
+      tl.to(typed, { n: TXT.length, duration: 0.95, ease: "none", onUpdate: () => { document.getElementById("typed").textContent = TXT.slice(0, Math.round(typed.n)); } }, 0.5);
+      tl.fromTo("#caret1", { opacity: 1 }, { opacity: 0, duration: 0.2, yoyo: true, repeat: 7, ease: "none" }, 0.2);
+      tl.fromTo("#sc1 .r1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25, ease: "back.out(1.6)" }, 1.6);
+      tl.fromTo("#miss1", { opacity: 0, x: 80, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 2.2);
+      tl.to("#miss1", { x: 10, duration: 0.06, yoyo: true, repeat: 7, ease: "none" }, 2.7);
+      tl.to("#miss1", { boxShadow: "0 0 40px rgba(var(--accent-rgb),.9)", duration: 0.4, yoyo: true, repeat: 3 }, 2.7);
+
+      /* ===== CENA 2: barras sobem, aviso pulsando, 0% ===== */
+      tl.fromTo("#sc2 .bar", { scaleY: 0, transformOrigin: "bottom" }, { scaleY: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.6)" }, 4.55);
+      tl.fromTo("#warn2", { opacity: 0, scale: 0, rotation: 15 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(3)" }, 5.55);
+      tl.to("#warn2", { scale: 1.12, duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, 6.1);
+      tl.to("#p2", { width: "87%", duration: 0.7, ease: "power2.out" }, 5.3);
+      tl.fromTo("#pct2", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, transformOrigin: "left center", duration: 0.5, ease: "back.out(2)" }, 5.4);
+
+      /* ===== CENA 3: contador, pins, seta pro concorrente ===== */
+      const c3 = { v: 0 };
+      tl.to(c3, { v: 128, duration: 1.8, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v).toLocaleString("pt-BR"); } }, 8.5);
+      tl.to("#p3", { width: "100%", duration: 1.8, ease: "power2.out" }, 8.5);
+      tl.fromTo(".pin", { opacity: 0, scale: 0, y: -40 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, stagger: 0.25, ease: "back.out(3)" }, 9.25);
+      tl.fromTo("#rowc3", { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 10.35);
+      tl.to("#rowc3", { x: 40, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, 10.9);
+
+      /* ===== CENA 4: site monta, estrelas, chips ===== */
+      tl.fromTo("#brw", { opacity: 0, scale: 0.85, y: 60 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(2)" }, 12.45);
+      tl.fromTo(".b4", { opacity: 0, scaleX: 0, transformOrigin: "left" }, { opacity: 1, scaleX: 1, duration: 0.4, stagger: 0.12, ease: "power3.out" }, 12.85);
+      tl.fromTo("#stars", { opacity: 0, scale: 0.6, transformOrigin: "left" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(3)" }, 13.4);
+      tl.to("#stars", { filter: "drop-shadow(0 0 24px rgba(255,200,0,1))", duration: 0.3, yoyo: true, repeat: 3 }, 13.85);
+      tl.fromTo(".c4", { opacity: 0, scale: 0, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.2, ease: "back.out(3)" }, 14.25);
+
+      /* ===== CENA 5: conversa no WhatsApp ===== */
+      const c5 = { v: 0 };
+      tl.to(c5, { v: 12, duration: 1.8, ease: "power1.out", onUpdate: () => { document.getElementById("n5").textContent = "+" + Math.round(c5.v); } }, 16.5);
+      tl.fromTo("#bb1", { opacity: 0, x: -120, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 16.65);
+      tl.fromTo("#bb2", { opacity: 0, x: 120, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 17.35);
+      tl.fromTo("#bb3", { opacity: 0, x: -120, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(2)" }, 18.05);
+      tl.fromTo("#nt5", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(3)" }, 18.85);
+      tl.to("#nt5", { scale: 1.1, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 19.3);
+
+      /* ===== CENA 6: dias + checklist ===== */
+      const c6 = { v: 0 };
+      tl.to(c6, { v: 3, duration: 1.0, ease: "none", onUpdate: () => { document.getElementById("n6").textContent = Math.round(c6.v) + " passos"; } }, 20.6);
+      tl.fromTo(["#d1", "#d2", "#d3"], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.15, ease: "back.out(2)" }, 20.65);
+      tl.to("#d1", { backgroundColor: "rgba(25,211,230,1)", color: "#04121f", duration: 0.2 }, 20.8);
+      tl.to("#d1 b", { color: "#04121f", duration: 0.2 }, 20.8);
+      tl.to("#d2", { backgroundColor: "rgba(25,211,230,1)", color: "#04121f", duration: 0.2 }, 21.5);
+      tl.to("#d2 b", { color: "#04121f", duration: 0.2 }, 21.5);
+      tl.to("#d3", { backgroundColor: "rgba(25,211,230,1)", color: "#04121f", duration: 0.2 }, 22.2);
+      tl.to("#d3 b", { color: "#04121f", duration: 0.2 }, 22.2);
+      tl.fromTo(".s6", { opacity: 0, x: -90 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.18, ease: "power3.out" }, 20.9);
+      ["#k1", "#k2", "#k3"].forEach((k, j) => {
+        tl.to(k, { backgroundColor: "#25d366", borderColor: "#25d366", color: "#052b12", scale: 1.3, duration: 0.2, ease: "back.out(3)" }, 20.8 + j * 0.7);
+        tl.to(k, { scale: 1, duration: 0.2 }, 21.0 + j * 0.7);
+      });
+
+      /* ===== CENA 7: CTA com confete ===== */
+      tl.fromTo("#cta7", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 24.1);
+      tl.fromTo("#kw7", { opacity: 0, scale: 0.4, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.55, ease: "back.out(2.4)" }, 24.55);
+      tl.to("#kw7", { scale: 1.07, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut" }, 25.1);
+      tl.fromTo("#arr7", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4 }, 25.3);
+      tl.to("#arr7", { y: 30, duration: 0.35, yoyo: true, repeat: 7, ease: "sine.inOut" }, 25.7);
+      tl.fromTo("#sub7", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 25.5);
+      tl.fromTo("#site7", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 26.1);
+      tl.to("#site7", { boxShadow: "0 0 70px rgba(25,211,230,.9)", duration: 0.4, yoyo: true, repeat: 3 }, 26.7);
+      const COL = ["#19d3e6", "#ffffff", "#1e6fe0", "#25d366", "#6fe8f5"];
+      for (let i = 0; i < 40; i++) {
+        const c = document.createElement("div");
+        c.className = "cf";
+        c.style.background = COL[i % 5];
+        c.style.left = 540 + "px"; c.style.top = "820px";
+        document.getElementById("sc7").appendChild(c);
+        const ang = (i / 40) * Math.PI * 2, dist = 300 + (i % 7) * 70;
+        tl.fromTo(c, { opacity: 0, x: 0, y: 0, rotation: 0 }, { opacity: 1, x: Math.cos(ang) * dist, y: Math.sin(ang) * dist - 160, rotation: 360 + i * 40, duration: 0.8, ease: "power2.out" }, 24.65);
+        tl.to(c, { y: "+=700", opacity: 0, duration: 1.6, ease: "power1.in" }, 25.45);
+      }
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 20.22,
+  "words": [
+    {
+      "word": "Por",
+      "key": "por",
+      "start": 0.0,
+      "end": 0.38,
+      "startFrame": 0,
+      "endFrame": 11
+    },
+    {
+      "word": "dentro",
+      "key": "dentro",
+      "start": 0.38,
+      "end": 0.72,
+      "startFrame": 11,
+      "endFrame": 22
+    },
+    {
+      "word": "do",
+      "key": "do",
+      "start": 0.72,
+      "end": 0.9,
+      "startFrame": 22,
+      "endFrame": 27
+    },
+    {
+      "word": "dashboard.",
+      "key": "dashboard",
+      "start": 0.9,
+      "end": 1.34,
+      "startFrame": 27,
+      "endFrame": 40
+    },
+    {
+      "word": "Clientes",
+      "key": "clientes",
+      "start": 2.62,
+      "end": 3.04,
+      "startFrame": 79,
+      "endFrame": 91
+    },
+    {
+      "word": "cadastrados.",
+      "key": "cadastrados",
+      "start": 3.04,
+      "end": 3.88,
+      "startFrame": 91,
+      "endFrame": 116
+    },
+    {
+      "word": "Vendas",
+      "key": "vendas",
+      "start": 5.04,
+      "end": 5.54,
+      "startFrame": 151,
+      "endFrame": 166
+    },
+    {
+      "word": "no",
+      "key": "no",
+      "start": 5.54,
+      "end": 5.72,
+      "startFrame": 166,
+      "endFrame": 172
+    },
+    {
+      "word": "período.",
+      "key": "período",
+      "start": 5.72,
+      "end": 6.180000000000001,
+      "startFrame": 172,
+      "endFrame": 185
+    },
+    {
+      "word": "Recebido.",
+      "key": "recebido",
+      "start": 7.62,
+      "end": 8.379999999999999,
+      "startFrame": 229,
+      "endFrame": 251
+    },
+    {
+      "word": "Lucro",
+      "key": "lucro",
+      "start": 9.56,
+      "end": 9.94,
+      "startFrame": 287,
+      "endFrame": 298
+    },
+    {
+      "word": "estimado.",
+      "key": "estimado",
+      "start": 9.94,
+      "end": 10.540000000000001,
+      "startFrame": 298,
+      "endFrame": 316
+    },
+    {
+      "word": "E",
+      "key": "e",
+      "start": 11.68,
+      "end": 11.8,
+      "startFrame": 350,
+      "endFrame": 354
+    },
+    {
+      "word": "dá",
+      "key": "dá",
+      "start": 11.8,
+      "end": 11.9,
+      "startFrame": 354,
+      "endFrame": 357
+    },
+    {
+      "word": "para",
+      "key": "para",
+      "start": 11.9,
+      "end": 12.02,
+      "startFrame": 357,
+      "endFrame": 361
+    },
+    {
+      "word": "ver",
+      "key": "ver",
+      "start": 12.02,
+      "end": 12.2,
+      "startFrame": 361,
+      "endFrame": 366
+    },
+    {
+      "word": "tudo",
+      "key": "tudo",
+      "start": 12.2,
+      "end": 12.62,
+      "startFrame": 366,
+      "endFrame": 379
+    },
+    {
+      "word": "em",
+      "key": "em",
+      "start": 12.62,
+      "end": 12.8,
+      "startFrame": 379,
+      "endFrame": 384
+    },
+    {
+      "word": "real,",
+      "key": "real",
+      "start": 12.8,
+      "end": 13.14,
+      "startFrame": 384,
+      "endFrame": 394
+    },
+    {
+      "word": "dólar",
+      "key": "dólar",
+      "start": 13.32,
+      "end": 13.94,
+      "startFrame": 400,
+      "endFrame": 418
+    },
+    {
+      "word": "ou",
+      "key": "ou",
+      "start": 13.94,
+      "end": 14.16,
+      "startFrame": 418,
+      "endFrame": 425
+    },
+    {
+      "word": "euro.",
+      "key": "euro",
+      "start": 14.16,
+      "end": 14.42,
+      "startFrame": 425,
+      "endFrame": 433
+    },
+    {
+      "word": "Seu",
+      "key": "seu",
+      "start": 15.6,
+      "end": 15.86,
+      "startFrame": 468,
+      "endFrame": 476
+    },
+    {
+      "word": "negócio",
+      "key": "negócio",
+      "start": 15.86,
+      "end": 16.02,
+      "startFrame": 476,
+      "endFrame": 481
+    },
+    {
+      "word": "em",
+      "key": "em",
+      "start": 16.02,
+      "end": 16.26,
+      "startFrame": 481,
+      "endFrame": 488
+    },
+    {
+      "word": "movimento,",
+      "key": "movimento",
+      "start": 16.26,
+      "end": 16.64,
+      "startFrame": 488,
+      "endFrame": 499
+    },
+    {
+      "word": "num",
+      "key": "num",
+      "start": 17.1,
+      "end": 17.28,
+      "startFrame": 513,
+      "endFrame": 518
+    },
+    {
+      "word": "só",
+      "key": "só",
+      "start": 17.28,
+      "end": 17.44,
+      "startFrame": 518,
+      "endFrame": 523
+    },
+    {
+      "word": "painel.",
+      "key": "painel",
+      "start": 17.44,
+      "end": 17.82,
+      "startFrame": 523,
+      "endFrame": 535
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 19.0,
+      "end": 19.580000000000002,
+      "startFrame": 570,
+      "endFrame": 587
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 19.580000000000002,
+      "end": 19.76,
+      "startFrame": 587,
+      "endFrame": 593
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 19.76,
+      "end": 20.14,
+      "startFrame": 593,
+      "endFrame": 604
+    },
+    {
+      "word": "I.",
+      "key": "i",
+      "start": 20.14,
+      "end": 20.22,
+      "startFrame": 604,
+      "endFrame": 607
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 33,
+    "total": 33
+  },
+  "pauseInserted": 0.6
+}

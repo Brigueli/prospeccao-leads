@@ -1,0 +1,4 @@
+Coloque aqui:
+- seu logo (de preferência PNG sem fundo);
+- suas cores (um print ou os códigos, ex.: #FF5500);
+- um exemplo do estilo de texto que você quer (a fonte ou o print de um post).

@@ -1,0 +1,376 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 19.82,
+  "words": [
+    {
+      "word": "Você",
+      "key": "você",
+      "start": 0.0,
+      "end": 0.64,
+      "startFrame": 0,
+      "endFrame": 19
+    },
+    {
+      "word": "espera",
+      "key": "espera",
+      "start": 0.64,
+      "end": 1.18,
+      "startFrame": 19,
+      "endFrame": 35
+    },
+    {
+      "word": "cliente",
+      "key": "cliente",
+      "start": 1.18,
+      "end": 1.64,
+      "startFrame": 35,
+      "endFrame": 49
+    },
+    {
+      "word": "chegar",
+      "key": "chegar",
+      "start": 1.64,
+      "end": 1.92,
+      "startFrame": 49,
+      "endFrame": 58
+    },
+    {
+      "word": "ou",
+      "key": "ou",
+      "start": 1.92,
+      "end": 2.42,
+      "startFrame": 58,
+      "endFrame": 73
+    },
+    {
+      "word": "vai",
+      "key": "vai",
+      "start": 2.42,
+      "end": 2.68,
+      "startFrame": 73,
+      "endFrame": 80
+    },
+    {
+      "word": "atrás",
+      "key": "atrás",
+      "start": 2.68,
+      "end": 3.12,
+      "startFrame": 80,
+      "endFrame": 94
+    },
+    {
+      "word": "dele?",
+      "key": "dele",
+      "start": 3.12,
+      "end": 3.48,
+      "startFrame": 94,
+      "endFrame": 104
+    },
+    {
+      "word": "Cliente",
+      "key": "cliente",
+      "start": 4.58,
+      "end": 4.9799999999999995,
+      "startFrame": 137,
+      "endFrame": 149
+    },
+    {
+      "word": "não",
+      "key": "não",
+      "start": 4.9799999999999995,
+      "end": 5.14,
+      "startFrame": 149,
+      "endFrame": 154
+    },
+    {
+      "word": "cai",
+      "key": "cai",
+      "start": 5.14,
+      "end": 5.359999999999999,
+      "startFrame": 154,
+      "endFrame": 161
+    },
+    {
+      "word": "do",
+      "key": "do",
+      "start": 5.359999999999999,
+      "end": 5.5,
+      "startFrame": 161,
+      "endFrame": 165
+    },
+    {
+      "word": "céu.",
+      "key": "céu",
+      "start": 5.5,
+      "end": 5.699999999999999,
+      "startFrame": 165,
+      "endFrame": 171
+    },
+    {
+      "word": "Na",
+      "key": "na",
+      "start": 6.96,
+      "end": 7.1000000000000005,
+      "startFrame": 209,
+      "endFrame": 213
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 7.1000000000000005,
+      "end": 7.58,
+      "startFrame": 213,
+      "endFrame": 227
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 7.58,
+      "end": 7.680000000000001,
+      "startFrame": 227,
+      "endFrame": 230
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 7.680000000000001,
+      "end": 7.94,
+      "startFrame": 230,
+      "endFrame": 238
+    },
+    {
+      "word": "I,",
+      "key": "i",
+      "start": 7.94,
+      "end": 8.02,
+      "startFrame": 238,
+      "endFrame": 241
+    },
+    {
+      "word": "você",
+      "key": "você",
+      "start": 8.34,
+      "end": 8.48,
+      "startFrame": 250,
+      "endFrame": 254
+    },
+    {
+      "word": "escolhe",
+      "key": "escolhe",
+      "start": 8.48,
+      "end": 8.94,
+      "startFrame": 254,
+      "endFrame": 268
+    },
+    {
+      "word": "o",
+      "key": "o",
+      "start": 8.94,
+      "end": 8.98,
+      "startFrame": 268,
+      "endFrame": 269
+    },
+    {
+      "word": "nicho",
+      "key": "nicho",
+      "start": 8.98,
+      "end": 9.379999999999999,
+      "startFrame": 269,
+      "endFrame": 281
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 9.379999999999999,
+      "end": 9.479999999999999,
+      "startFrame": 281,
+      "endFrame": 284
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 9.479999999999999,
+      "end": 9.559999999999999,
+      "startFrame": 284,
+      "endFrame": 287
+    },
+    {
+      "word": "cidade,",
+      "key": "cidade",
+      "start": 9.559999999999999,
+      "end": 9.959999999999999,
+      "startFrame": 287,
+      "endFrame": 299
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 10.299999999999999,
+      "end": 10.459999999999999,
+      "startFrame": 309,
+      "endFrame": 314
+    },
+    {
+      "word": "os",
+      "key": "os",
+      "start": 10.459999999999999,
+      "end": 10.58,
+      "startFrame": 314,
+      "endFrame": 317
+    },
+    {
+      "word": "leads",
+      "key": "leads",
+      "start": 10.58,
+      "end": 10.78,
+      "startFrame": 317,
+      "endFrame": 323
+    },
+    {
+      "word": "aparecem",
+      "key": "aparecem",
+      "start": 10.78,
+      "end": 11.379999999999999,
+      "startFrame": 323,
+      "endFrame": 341
+    },
+    {
+      "word": "na",
+      "key": "na",
+      "start": 11.379999999999999,
+      "end": 11.52,
+      "startFrame": 341,
+      "endFrame": 346
+    },
+    {
+      "word": "tela.",
+      "key": "tela",
+      "start": 11.52,
+      "end": 11.819999999999999,
+      "startFrame": 346,
+      "endFrame": 355
+    },
+    {
+      "word": "Empresas",
+      "key": "empresas",
+      "start": 12.86,
+      "end": 13.280000000000001,
+      "startFrame": 386,
+      "endFrame": 398
+    },
+    {
+      "word": "reais,",
+      "key": "reais",
+      "start": 13.280000000000001,
+      "end": 13.68,
+      "startFrame": 398,
+      "endFrame": 410
+    },
+    {
+      "word": "com",
+      "key": "com",
+      "start": 14.18,
+      "end": 14.32,
+      "startFrame": 425,
+      "endFrame": 430
+    },
+    {
+      "word": "telefone",
+      "key": "telefone",
+      "start": 14.32,
+      "end": 14.940000000000001,
+      "startFrame": 430,
+      "endFrame": 448
+    },
+    {
+      "word": "e",
+      "key": "e",
+      "start": 14.940000000000001,
+      "end": 15.2,
+      "startFrame": 448,
+      "endFrame": 456
+    },
+    {
+      "word": "WhatsApp.",
+      "key": "whatsapp",
+      "start": 15.2,
+      "end": 15.48,
+      "startFrame": 456,
+      "endFrame": 464
+    },
+    {
+      "word": "É",
+      "key": "é",
+      "start": 16.66,
+      "end": 16.82,
+      "startFrame": 500,
+      "endFrame": 505
+    },
+    {
+      "word": "só",
+      "key": "só",
+      "start": 16.82,
+      "end": 16.96,
+      "startFrame": 505,
+      "endFrame": 509
+    },
+    {
+      "word": "abordar.",
+      "key": "abordar",
+      "start": 16.96,
+      "end": 17.4,
+      "startFrame": 509,
+      "endFrame": 522
+    },
+    {
+      "word": "O",
+      "key": "o",
+      "start": 18.380000000000003,
+      "end": 18.48,
+      "startFrame": 551,
+      "endFrame": 554
+    },
+    {
+      "word": "plano",
+      "key": "plano",
+      "start": 18.48,
+      "end": 18.68,
+      "startFrame": 554,
+      "endFrame": 560
+    },
+    {
+      "word": "Starter",
+      "key": "starter",
+      "start": 18.68,
+      "end": 19.14,
+      "startFrame": 560,
+      "endFrame": 574
+    },
+    {
+      "word": "é",
+      "key": "é",
+      "start": 19.14,
+      "end": 19.24,
+      "startFrame": 574,
+      "endFrame": 577
+    },
+    {
+      "word": "grátis.",
+      "key": "grátis",
+      "start": 19.24,
+      "end": 19.82,
+      "startFrame": 577,
+      "endFrame": 595
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 45,
+    "total": 45
+  },
+  "pauseInserted": 0.6
+}

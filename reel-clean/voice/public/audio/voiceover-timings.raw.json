@@ -1,0 +1,255 @@
+{
+  "fps": 30,
+  "engine": "google-ai-studio-tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Zephyr",
+  "style": "Português do Brasil, sotaque natural. Mulher jovem, uns 28 anos, voz brilhante, moderna e próxima, com sorriso na voz, sem tom de locutora de rádio. Ritmo CALMO e pausado, com pausas entre as frases. Fale 'Brigueli ponto A I' como 'brigueli ponto ei ai', 'WhatsApp' como 'uóts-épi', 'Starter' como 'startêr', 'skills' como 'iskils', 'agents' como 'êidjents', 'prompts' como 'prômpts', 'dashboard' como 'déshbórd'. Não leia estas instruções; leia só o texto.",
+  "durationSeconds": 16.58,
+  "words": [
+    {
+      "word": "Prospecção",
+      "key": "prospecção",
+      "start": 0.0,
+      "end": 1.08,
+      "startFrame": 0,
+      "endFrame": 32
+    },
+    {
+      "word": "em",
+      "key": "em",
+      "start": 1.08,
+      "end": 1.32,
+      "startFrame": 32,
+      "endFrame": 40
+    },
+    {
+      "word": "quatro",
+      "key": "quatro",
+      "start": 1.32,
+      "end": 1.68,
+      "startFrame": 40,
+      "endFrame": 50
+    },
+    {
+      "word": "passos.",
+      "key": "passos",
+      "start": 1.68,
+      "end": 2.7,
+      "startFrame": 50,
+      "endFrame": 81
+    },
+    {
+      "word": "Primeiro,",
+      "key": "primeiro",
+      "start": 2.84,
+      "end": 3.52,
+      "startFrame": 85,
+      "endFrame": 106
+    },
+    {
+      "word": "escolha",
+      "key": "escolha",
+      "start": 3.82,
+      "end": 4.08,
+      "startFrame": 115,
+      "endFrame": 122
+    },
+    {
+      "word": "o",
+      "key": "o",
+      "start": 4.08,
+      "end": 4.14,
+      "startFrame": 122,
+      "endFrame": 124
+    },
+    {
+      "word": "nicho.",
+      "key": "nicho",
+      "start": 4.14,
+      "end": 4.6,
+      "startFrame": 124,
+      "endFrame": 138
+    },
+    {
+      "word": "Segundo,",
+      "key": "segundo",
+      "start": 5.0,
+      "end": 5.52,
+      "startFrame": 150,
+      "endFrame": 166
+    },
+    {
+      "word": "escolha",
+      "key": "escolha",
+      "start": 5.86,
+      "end": 6.18,
+      "startFrame": 176,
+      "endFrame": 185
+    },
+    {
+      "word": "a",
+      "key": "a",
+      "start": 6.18,
+      "end": 6.28,
+      "startFrame": 185,
+      "endFrame": 188
+    },
+    {
+      "word": "cidade.",
+      "key": "cidade",
+      "start": 6.28,
+      "end": 6.72,
+      "startFrame": 188,
+      "endFrame": 202
+    },
+    {
+      "word": "Terceiro,",
+      "key": "terceiro",
+      "start": 7.46,
+      "end": 8.14,
+      "startFrame": 224,
+      "endFrame": 244
+    },
+    {
+      "word": "veja",
+      "key": "veja",
+      "start": 8.62,
+      "end": 8.84,
+      "startFrame": 259,
+      "endFrame": 265
+    },
+    {
+      "word": "as",
+      "key": "as",
+      "start": 8.84,
+      "end": 8.96,
+      "startFrame": 265,
+      "endFrame": 269
+    },
+    {
+      "word": "empresas",
+      "key": "empresas",
+      "start": 8.96,
+      "end": 9.28,
+      "startFrame": 269,
+      "endFrame": 278
+    },
+    {
+      "word": "encontradas.",
+      "key": "encontradas",
+      "start": 9.28,
+      "end": 10.2,
+      "startFrame": 278,
+      "endFrame": 306
+    },
+    {
+      "word": "Quarto,",
+      "key": "quarto",
+      "start": 10.82,
+      "end": 11.4,
+      "startFrame": 325,
+      "endFrame": 342
+    },
+    {
+      "word": "abra",
+      "key": "abra",
+      "start": 11.92,
+      "end": 12.16,
+      "startFrame": 358,
+      "endFrame": 365
+    },
+    {
+      "word": "o",
+      "key": "o",
+      "start": 12.16,
+      "end": 12.34,
+      "startFrame": 365,
+      "endFrame": 370
+    },
+    {
+      "word": "WhatsApp",
+      "key": "whatsapp",
+      "start": 12.34,
+      "end": 12.84,
+      "startFrame": 370,
+      "endFrame": 385
+    },
+    {
+      "word": "do",
+      "key": "do",
+      "start": 12.84,
+      "end": 13.1,
+      "startFrame": 385,
+      "endFrame": 393
+    },
+    {
+      "word": "lead.",
+      "key": "lead",
+      "start": 13.1,
+      "end": 13.44,
+      "startFrame": 393,
+      "endFrame": 403
+    },
+    {
+      "word": "Comece",
+      "key": "comece",
+      "start": 14.1,
+      "end": 14.62,
+      "startFrame": 423,
+      "endFrame": 439
+    },
+    {
+      "word": "grátis",
+      "key": "grátis",
+      "start": 14.62,
+      "end": 15.2,
+      "startFrame": 439,
+      "endFrame": 456
+    },
+    {
+      "word": "na",
+      "key": "na",
+      "start": 15.2,
+      "end": 15.34,
+      "startFrame": 456,
+      "endFrame": 460
+    },
+    {
+      "word": "Brigueli",
+      "key": "brigueli",
+      "start": 15.34,
+      "end": 15.94,
+      "startFrame": 460,
+      "endFrame": 478
+    },
+    {
+      "word": "ponto",
+      "key": "ponto",
+      "start": 15.94,
+      "end": 16.1,
+      "startFrame": 478,
+      "endFrame": 483
+    },
+    {
+      "word": "A",
+      "key": "a",
+      "start": 16.1,
+      "end": 16.5,
+      "startFrame": 483,
+      "endFrame": 495
+    },
+    {
+      "word": "I.",
+      "key": "i",
+      "start": 16.5,
+      "end": 16.58,
+      "startFrame": 495,
+      "endFrame": 497
+    }
+  ],
+  "alignment": {
+    "engine": "faster-whisper-small",
+    "matched": 30,
+    "total": 30
+  }
+}
